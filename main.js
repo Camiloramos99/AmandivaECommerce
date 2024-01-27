@@ -68,8 +68,12 @@ shoppingCartIcon.addEventListener("click", toggleProductDetail);
 productDetailCloseIcon.addEventListener("click", closeProductDetailSecondary);
 
 
-let productListBackup = null;                                                                  // Variable para hacer una copia de respaldo de la lista original
 
+
+
+
+
+let productListBackup = null;
 
 function agregarEventoClickACategorias(categorias, productList, renderProducts) {
     categorias.forEach((categoria) => {
@@ -77,21 +81,18 @@ function agregarEventoClickACategorias(categorias, productList, renderProducts) 
             categorias.forEach((cat) => cat.classList.remove("selected"));
             categoria.classList.add("selected");
 
-            if (e.currentTarget.id !== "all") {                                              // si clickean en categoria distinta a All
-                
-                if (productListBackup === null) {                                            // Verificar si ya hay una copia de respaldo
-                  
-                    productListBackup = productList.slice();                                 // Hacer una copia de respaldo de la lista original
+            if (e.currentTarget.id !== "all") {
+                if (productListBackup === null) {
+                    productListBackup = productList.slice();
                 }
 
-                productList = productListBackup.filter(producto => producto.categoria.id === e.currentTarget.id); //Filtra
-            } else {                                                                                              
-                
-                productList = productListBackup ? productListBackup.slice() : productList;  // Restaurar la lista original desde la copia de respaldo si clickean en All
-               
-                productListBackup = null;                                                   // Restablecer la copia de respaldo
-            }
+                productList = productListBackup.filter(producto => producto.categoria.id === e.currentTarget.id);
 
+
+            } else {
+                productList = productListBackup ? productListBackup.slice() : productList;
+                productListBackup = null;
+            }
             renderProducts(productList);
             escuchaAgregarProducto();
         });
@@ -99,97 +100,102 @@ function agregarEventoClickACategorias(categorias, productList, renderProducts) 
 }
 
 
+
+
+
+
+
 let productList = [];
 
 productList.push({
     price: 120,
-    name: "Bike",
+    name: "Buzo Amsterdam",
     categoria: {
-        nombre: "others",
-        id: "others"
+        nombre: "Buzos",
+        id: "Buzos"
     },
-    img:"https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18.jpeg", 
 });
 productList.push({
     price: 199,
-    name: "Desk Lamp",
+    name: "Hoodie Honky Tonk",
     categoria: {
-        nombre: "furiture",
-        id:"furiture"
+        nombre: "Hoodies",
+        id:"Hoodies"
     },
-    img:"https://images.pexels.com/photos/18280834/pexels-photo-18280834/free-photo-of-cama-lampara-decorativo-mesita-de-noche.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (1).jpeg",
 });
 productList.push({
     price: 390,
-    name: "Couch",
+    name: "Blusa Corta",
     categoria: {
-        nombre: "furiture",
-        id: "furiture"
+        nombre: "Blusas",
+        id: "Blusas"
     },
-    img:"https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.17.jpeg",
 });
 productList.push({
     price: 99,
-    name: "Hanging Mirror",
+    name: "Blusa Manga Larga",
     categoria: {
-        nombre: "furiture",
-        id: "furiture"
+        nombre: "Blusas",
+        id: "Blusas"
     },
-    img:"https://images.pexels.com/photos/1528975/pexels-photo-1528975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.16.jpeg",
 });
 productList.push({
     price: 59,
-    name: "Blue Bag",
+    name: "Buzo Corto Tejido",
     categoria: {
-        nombre: "others",
-        id: "others"
+        nombre: "Buzos",
+        id: "Buzos"
     },
-    img:"https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (2).jpeg",
 });
 productList.push({
     price: 129,
-    name: "Pinting",
+    name: "Hoodie Oversize",
     categoria: {
-        nombre: "furiture",
-        id: "furiture"
+        nombre: "Hoodies",
+        id: "Hoodies"
     },
-    img:"https://images.pexels.com/photos/18254580/pexels-photo-18254580/free-photo-of-casas-pared-pintura-casa.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19.jpeg",
 });
 productList.push({
     price: 69,
-    name: "Gardening Kit",
+    name: "Hoodie Corto Frisa Crema",
     categoria: {
-        nombre: "Gardening",
-        id: "Gardening"
+        nombre: "Hoodies",
+        id: "Hoodies"
     },
-    img:"https://images.pexels.com/photos/6231726/pexels-photo-6231726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (3).jpeg",
 });
 productList.push({
     price: 1589,
-    name: "Lawnmower",
+    name: "Hoodie Oversize Fresa",
     categoria: {
-        nombre: "Gardening",
-        id: "Gardening"
+        nombre: "Hoodies",
+        id: "Hoodies"
     },
-    img:"https://images.pexels.com/photos/9229821/pexels-photo-9229821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (2).jpeg",
 });
 productList.push({
     price: 29,
-    name: "Sweater",
+    name: "Buzo Corto Tejido - Ruedo En",
     categoria: {
-        nombre: "clothes",
-        id: "clothes"
+        nombre: "Buzos",
+        id: "Buzos"
     },
-    img:"https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.16 (1).jpeg",
 });
 productList.push({
     price: 45,
-    name: "wooden train",
+    name: "Buzo New York",
     categoria: {
-        nombre: "toys",
-        id: "toys"
+        nombre: "Buzos",
+        id: "Buzos"
     },
-    img:"https://images.pexels.com/photos/273062/pexels-photo-273062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img:"c:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (1).jpeg",
 });
 
 
@@ -231,7 +237,7 @@ function renderProducts(arr){
     
         const productInfoFigure = document.createElement("figure");
         const productImgCart = document.createElement("img");
-        productImgCart.setAttribute("src", "./icons/bt_add_to_cart.svg");
+        productImgCart.setAttribute("src", "icons/add-to-basket-5854 (1).png");
         productImgCart.classList.add("agregar-al-carrito")
 
         productInfoFigure.appendChild(productImgCart);
