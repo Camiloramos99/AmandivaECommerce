@@ -67,12 +67,6 @@ menuMobileIcon.addEventListener("click", toggleMobileMenu);
 shoppingCartIcon.addEventListener("click", toggleProductDetail);
 productDetailCloseIcon.addEventListener("click", closeProductDetailSecondary);
 
-
-
-
-
-
-
 let productListBackup = null;
 
 function agregarEventoClickACategorias(categorias, productList, renderProducts) {
@@ -98,12 +92,6 @@ function agregarEventoClickACategorias(categorias, productList, renderProducts) 
         });
     });
 }
-
-
-
-
-
-
 
 let productList = [];
 
@@ -198,7 +186,6 @@ productList.push({
     img:"c:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (1).jpeg",
 });
 
-
 const contenedorProductos = document.querySelectorAll(".cards-container")
 
 function renderProducts(arr){
@@ -254,18 +241,16 @@ function renderProducts(arr){
 renderProducts(productList);
 agregarEventoClickACategorias(categorias, productList, renderProducts);
 
-
     /* Carrito De Compras */
 
 var carrito = [];
-
 
 const CartContainer = document.querySelector(".my-order-content");
 const carritoDeCompras = document.querySelector(".navbar-shopping-cart");
 const cartProductList = document.getElementById("shopping-cart-list");
 const productCard = document.querySelector(".product-card")
 const productPrice = document.querySelector("product-price");
-const productCounter = document.querySelector("contador-productos");
+const productCounter = document.querySelector(".contador-productos");
 
 var sumadeprecios;
 
@@ -299,9 +284,11 @@ function agregarProducto(e) {
 
     } else {
         carrito.push(producto);
-    }
+        
+    }   
     actualizarCarrito();
     TotalCarrito();
+    obtenerSumaCantidades();
 };
 
 function eliminarProducto(productName) {
@@ -309,15 +296,24 @@ function eliminarProducto(productName) {
         if (producto.nombre === productName && producto.cantidad > 0) {
             producto.cantidad--;
             producto.precio = producto.precio - producto.precioInicial;
-        }
+        }    
     });
 
     carrito = carrito.filter(producto => producto.cantidad > 0);
+
     actualizarCarrito();
     TotalCarrito();
+    obtenerSumaCantidades();
 }
 
- function actualizarCarrito() {
+function obtenerSumaCantidades() {
+    let sumaCantidades = carrito.reduce((suma, producto) => suma + producto.cantidad, 0);
+
+    productCounter.innerText = sumaCantidades;
+    return sumaCantidades;
+}
+
+function actualizarCarrito() {
     cartProductList.innerHTML = '';
 
     carrito.forEach(producto => {
