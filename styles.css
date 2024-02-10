@@ -195,7 +195,7 @@ nav {
   display: flex;
   flex-direction: column;
 }
-.order p span:nth-child(1) {
+.order p span:nth-child(0) {
   font-size: var(--md);
   font-weight: bold;
 }
@@ -203,9 +203,46 @@ nav {
   text-align: end;
   font-weight: bold;
 }
+.btns-container {
+  border: none; 
+  text-decoration: none;
+  border-radius: 8px;
+}
+.addition-btn {
+  color: var(--white);
+  background-color: var(--very-light-pink);
+  opacity: 95%;
+  border-top-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
+  cursor: pointer; 
+  border: none;
+  height: 26px;
+  min-width: 26px;
+  padding: 0px;
+  font-family: inherit;
+
+}
+.subtraction-btn {
+  color: var(--white);
+  background-color: var(--very-light-pink);
+  opacity: 75%;
+  cursor: pointer; 
+  border: none;
+  border-top-left-radius: 5px; 
+  border-bottom-left-radius: 5px;
+  display: inline-flex; /* Utilizar flexbox */
+  justify-content: center; /* Centrar contenido horizontalmente */
+  align-items: center;
+  text-align: center;
+  height: 26px;
+  min-width: 26px;
+  padding: 0px;
+  font-family: inherit;
+
+}
 .shopping-cart {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto auto auto auto auto;
   gap: 16px;
   margin-bottom: 24px;
   align-items: center;

@@ -261,7 +261,6 @@ function agregarProducto(e) {
     const productName = productoSeleccionado.querySelector(".product-name");
     const productImg = productoSeleccionado.querySelector("img").src;
 
-
     const producto = {
         precioInicial: parseFloat(productPrice.innerText),
         precio: parseFloat(productPrice.innerText),
@@ -271,20 +270,15 @@ function agregarProducto(e) {
         cantidad: 1
     };
 
-    const productoExistente = carrito.find(function(item){
-        return producto.nombre === item.nombre;
-    });
+    const productoExistente = carrito.find(item => producto.nombre === item.nombre);
          
-        if (productoExistente) {
-            productoExistente.cantidad++; 
-            if (productoExistente.cantidad > 1) {
-                productoExistente.precio = productoExistente.precioInicial * productoExistente.cantidad;
-
-            }
-
+    if (productoExistente) {
+        productoExistente.cantidad++; 
+        if (productoExistente.cantidad > 1) {
+            productoExistente.precio = productoExistente.precioInicial * productoExistente.cantidad;
+        }
     } else {
-        carrito.push(producto);
-        
+        carrito.push(producto);  
     }   
     actualizarCarrito();
     TotalCarrito();
@@ -292,23 +286,18 @@ function agregarProducto(e) {
 };
 
 function eliminarProducto(productName) {
-    carrito.forEach(producto => {
-        if (producto.nombre === productName && producto.cantidad > 0) {
-            producto.cantidad--;
-            producto.precio = producto.precio - producto.precioInicial;
-        }    
-    });
-
-    carrito = carrito.filter(producto => producto.cantidad > 0);
-
+    carrito = carrito.filter(producto => producto.nombre !== productName); // Filtrar el carrito para eliminar el producto con el mismo nombre
     actualizarCarrito();
     TotalCarrito();
     obtenerSumaCantidades();
 }
 
+function filtrarProductosConCantidadMayorACero(carrito) {
+    return carrito.filter(producto => producto.cantidad > 0);
+}
+
 function obtenerSumaCantidades() {
     let sumaCantidades = carrito.reduce((suma, producto) => suma + producto.cantidad, 0);
-
     productCounter.innerText = sumaCantidades;
     return sumaCantidades;
 }
@@ -337,9 +326,6 @@ function actualizarCarrito() {
         productPriceContainer.classList.add("product-price-container")
            
         const productPrice = document.createElement("p");
-
-        productPrice.textContent = producto.cantidad === 1 ? producto.precioInicial : producto.precio;
-
         productPrice.textContent = producto.precio;
         productPrice.classList.add('estilo-dinamico-precio'); 
         
@@ -352,8 +338,36 @@ function actualizarCarrito() {
         deleteIcons.classList.add("elimina-producto"); 
         
         deleteIcons.addEventListener('click', () => {                    // Escucha el click en icono ELIMINAR
+            const productName = producto.nombre                          // Obtener el nombre del producto
+            eliminarProducto(productName);                               // Llamar a la función eliminarProducto con el nombre del producto
+        });
 
-            eliminarProducto(producto.nombre);
+        const buttonsContainer = document.createElement("div");
+        buttonsContainer.classList.add("btns-container")
+
+        const SubtractionButton = document.createElement("button");
+        SubtractionButton.classList.add("subtraction-btn");
+        SubtractionButton.textContent = "-";
+
+        SubtractionButton.addEventListener("click", () => {
+            productQuantity.textContent = producto.cantidad -= 1;
+            if(producto.cantidad === 0) {
+                eliminarProducto(producto.nombre); 
+            }
+            productPrice.textContent = producto.precio -= producto.precioInicial;
+            obtenerSumaCantidades();
+            TotalCarrito();
+        });
+
+        const additionButton = document.createElement("button")
+        additionButton.classList.add("addition-btn");
+        additionButton.textContent = "+";
+
+        additionButton.addEventListener("click", () =>{
+            productQuantity.textContent = producto.cantidad += 1;
+            productPrice.textContent = producto.precio += producto.precioInicial;
+            obtenerSumaCantidades();
+            TotalCarrito();
         });
         
 
@@ -362,15 +376,14 @@ function actualizarCarrito() {
         productFigure.appendChild(productQuantity);
         cartProductList.appendChild(productFigure);
         cartProductList.appendChild(productName);
+        buttonsContainer.appendChild(SubtractionButton);
+        buttonsContainer.appendChild(additionButton);
+        cartProductList.appendChild(buttonsContainer);
         cartProductList.appendChild(productPriceContainer);
         productPriceContainer.appendChild(symbolPrice);
         productPriceContainer.appendChild(productPrice);
-        
         cartProductList.appendChild(deleteIcons);
-
-
     });
-
 };
 
 function TotalCarrito() { 
