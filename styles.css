@@ -242,8 +242,8 @@ nav {
 }
 .shopping-cart {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  gap: 16px;
+  grid-template-columns:  auto 1fr 53px 53px auto;
+  gap: 8px;
   margin-bottom: 24px;
   align-items: center;
 }
@@ -259,19 +259,23 @@ nav {
 .estilo-dinamico-nombre {
   color: var(--very-light-pink);
 }
+
+
 .product-price-container p {
   display: inline-block;
-
 }
+
 .estilo-dinamico-symbol {
   font-size: var(--md);
   font-weight: bold;
-
 }
+
 .estilo-dinamico-precio {
   font-size: var(--md);
   font-weight: bold;
 }
+
+
 figure {
   position: relative;
 }
