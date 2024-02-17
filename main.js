@@ -54,14 +54,11 @@ function toggleProductDetail() {
 function openProductDetailSecondary() {
     productDetail.classList.add("inactive");
     productDetailSecondary.classList.remove("inactive");
-
 }
 
 function closeProductDetailSecondary() {
-    productDetailSecondary.classList.add("inactive");
-    
+    productDetailSecondary.classList.add("inactive");    
 }
-
 menuEmail.addEventListener("click", toggleDesktopMenu);
 menuMobileIcon.addEventListener("click", toggleMobileMenu);
 shoppingCartIcon.addEventListener("click", toggleProductDetail);
@@ -96,7 +93,7 @@ function agregarEventoClickACategorias(categorias, productList, renderProducts) 
 let productList = [];
 
 productList.push({
-    price: 120,
+    price: 41900,
     name: "Buzo Amsterdam",
     categoria: {
         nombre: "Buzos",
@@ -105,7 +102,7 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18.jpeg", 
 });
 productList.push({
-    price: 199,
+    price: 36000,
     name: "Hoodie Honky Tonk",
     categoria: {
         nombre: "Hoodies",
@@ -114,7 +111,7 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (1).jpeg",
 });
 productList.push({
-    price: 390,
+    price: 15199,
     name: "Blusa Corta",
     categoria: {
         nombre: "Blusas",
@@ -123,7 +120,7 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.17.jpeg",
 });
 productList.push({
-    price: 99,
+    price: 37999,
     name: "Blusa Manga Larga",
     categoria: {
         nombre: "Blusas",
@@ -132,7 +129,7 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.16.jpeg",
 });
 productList.push({
-    price: 59,
+    price: 17500,
     name: "Buzo Corto Tejido",
     categoria: {
         nombre: "Buzos",
@@ -141,7 +138,7 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (2).jpeg",
 });
 productList.push({
-    price: 129,
+    price: 39799,
     name: "Hoodie Oversize",
     categoria: {
         nombre: "Hoodies",
@@ -150,7 +147,7 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19.jpeg",
 });
 productList.push({
-    price: 69,
+    price: 24999,
     name: "Hoodie Corto Frisa Crema",
     categoria: {
         nombre: "Hoodies",
@@ -159,7 +156,7 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (3).jpeg",
 });
 productList.push({
-    price: 1589,
+    price: 35000,
     name: "Hoodie Oversize Fresa",
     categoria: {
         nombre: "Hoodies",
@@ -168,8 +165,8 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (2).jpeg",
 });
 productList.push({
-    price: 29,
-    name: "Buzo Corto Tejido - Ruedo En",
+    price: 29099,
+    name: "Buzo Corto Tejido - Ruedo En V",
     categoria: {
         nombre: "Buzos",
         id: "Buzos"
@@ -177,7 +174,7 @@ productList.push({
     img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.16 (1).jpeg",
 });
 productList.push({
-    price: 45,
+    price: 26000,
     name: "Buzo New York",
     categoria: {
         nombre: "Buzos",
@@ -269,13 +266,24 @@ function agregarProducto(e) {
         imagen: productImg,
         cantidad: 1
     };
-
     const productoExistente = carrito.find(item => producto.nombre === item.nombre);
          
     if (productoExistente) {
         productoExistente.cantidad++; 
         if (productoExistente.cantidad > 1) {
             productoExistente.precio = productoExistente.precioInicial * productoExistente.cantidad;
+/* 
+            function priceFormat(precio) {
+                precio = new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                    minimumFractionDigits: 2
+            
+                });
+            };
+
+
+*/
         }
     } else {
         carrito.push(producto);  
@@ -301,7 +309,6 @@ function obtenerSumaCantidades() {
     productCounter.innerText = sumaCantidades;
     return sumaCantidades;
 }
-
 function actualizarCarrito() {
     cartProductList.innerHTML = '';
 
@@ -318,12 +325,17 @@ function actualizarCarrito() {
         productQuantity.classList.add("cantidad-productos");
         productQuantity.textContent = producto.cantidad;
 
+        const divInfoProductCart = document.createElement("div");
+        divInfoProductCart.classList.add("container-info-products-cart")
+
         const productName = document.createElement("p");
         productName.textContent = producto.nombre;
         productName.classList.add("estilo-dinamico-nombre"); 
 
         const productPriceContainer = document.createElement("div");
         productPriceContainer.classList.add("product-price-container")
+
+        const priceElements = document.createElement("div")
            
         const productPrice = document.createElement("p");
         productPrice.textContent = producto.precio;
@@ -338,7 +350,7 @@ function actualizarCarrito() {
         deleteIcons.classList.add("elimina-producto"); 
         
         deleteIcons.addEventListener('click', () => {                    // Escucha el click en icono ELIMINAR
-            const productName = producto.nombre                          // Obtener el nombre del producto
+            const productName = producto.nombre;                          // Obtener el nombre del producto
             eliminarProducto(productName);                               // Llamar a la función eliminarProducto con el nombre del producto
         });
 
@@ -347,6 +359,7 @@ function actualizarCarrito() {
 
         const SubtractionButton = document.createElement("button");
         SubtractionButton.classList.add("subtraction-btn");
+        SubtractionButton.setAttribute("id", "subtraction-btn");
         SubtractionButton.textContent = "-";
 
         SubtractionButton.addEventListener("click", () => {
@@ -361,6 +374,8 @@ function actualizarCarrito() {
 
         const additionButton = document.createElement("button")
         additionButton.classList.add("addition-btn");
+        additionButton.setAttribute("id", "addition-btn");
+
         additionButton.textContent = "+";
 
         additionButton.addEventListener("click", () =>{
@@ -375,14 +390,21 @@ function actualizarCarrito() {
         productFigure.appendChild(productImgCart);
         productFigure.appendChild(productQuantity);
         cartProductList.appendChild(productFigure);
-        cartProductList.appendChild(productName);
+        cartProductList.appendChild(divInfoProductCart);
+        divInfoProductCart.appendChild(productName);
+        divInfoProductCart.appendChild(buttonsContainer);
         buttonsContainer.appendChild(SubtractionButton);
         buttonsContainer.appendChild(additionButton);
-        cartProductList.appendChild(buttonsContainer);
         cartProductList.appendChild(productPriceContainer);
-        productPriceContainer.appendChild(symbolPrice);
-        productPriceContainer.appendChild(productPrice);
-        cartProductList.appendChild(deleteIcons);
+
+        
+        productPriceContainer.appendChild(deleteIcons);
+        productPriceContainer.appendChild(priceElements);
+        priceElements.appendChild(symbolPrice);
+        priceElements.appendChild(productPrice);
+
+
+        
     });
 };
 

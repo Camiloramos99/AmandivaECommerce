@@ -19,7 +19,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
-  border-bottom: 1px solid var(--very-light-pink);
+  border-bottom: 1px solid var(--very-light-pink); 
 }
 .navbar-left ul li a {
   cursor: pointer;
@@ -92,7 +92,7 @@ nav {
   right: 60px;
   width: 100px;
   height: auto;
-  border: 1px solid var(--very-light-pink);
+  border: 1px solid var(--very-light-pink); 
   border-radius: 6px;
   padding: 20px 20px 0 20px;
 }
@@ -110,7 +110,7 @@ nav {
 }
 .desktop-menu ul li:last-child {
   padding-top: 20px;
-  border-top: 1px solid var(--very-light-pink);
+  border-top: 1px solid var(--very-light-pink); 
 }
 .desktop-menu ul li:last-child a {
   color: var(--brand-color);
@@ -137,7 +137,7 @@ nav {
   text-decoration: none;
   color: var(--black);
   font-weight: bold;
-  /* margin-bottom: 24px; */
+  margin-bottom: 24px; 
 }
 .mobile-menu ul {
   padding: 0;
@@ -145,8 +145,9 @@ nav {
   list-style: none;
 }
 .mobile-menu ul:nth-child(1) {
-  border-bottom: 1px solid var(--very-light-pink);
-}
+   border-bottom: 1px solid var(--very-light-pink); 
+}  
+
 .mobile-menu ul li {
   margin-bottom: 24px;
 }
@@ -203,46 +204,62 @@ nav {
   text-align: end;
   font-weight: bold;
 }
+.container-info-products-cart {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.container-info-products-cart p {
+  margin-left: 3px;
+
+}
+.container-info-products-cart .btns-container {
+  margin-bottom: 20px;
+  margin-left: 3px;
+}
 .btns-container {
   border: none; 
   text-decoration: none;
   border-radius: 8px;
 }
-.addition-btn {
-  color: var(--white);
-  background-color: var(--very-light-pink);
-  opacity: 95%;
-  border-top-right-radius: 5px; 
-  border-bottom-right-radius: 5px;
-  cursor: pointer; 
-  border: none;
-  height: 26px;
-  min-width: 26px;
-  padding: 0px;
-  font-family: inherit;
-
-}
-.subtraction-btn {
-  color: var(--white);
-  background-color: var(--very-light-pink);
-  opacity: 75%;
-  cursor: pointer; 
-  border: none;
-  border-top-left-radius: 5px; 
-  border-bottom-left-radius: 5px;
+#addition-btn {
   display: inline-flex; /* Utilizar flexbox */
   justify-content: center; /* Centrar contenido horizontalmente */
   align-items: center;
   text-align: center;
+  border: none;
+  border: 1px solid var(--brand-color); 
+  border-left: none; /* Quita el borde izquierdo */
+  opacity: 75%; 
+  border-top-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
+  background-color: var(--text-input-field);
+  cursor: pointer; 
   height: 26px;
   min-width: 26px;
   padding: 0px;
   font-family: inherit;
-
+}
+#subtraction-btn {
+  display: inline-flex; /* Utilizar flexbox */
+  justify-content: center; /* Centrar contenido horizontalmente */
+  align-items: center;
+  text-align: center;
+  border: none;
+  border: 1px solid var(--brand-color); 
+  opacity: 75%;
+  border-right: none; /* Quita el borde derecho */
+  border-top-left-radius: 5px; 
+  border-bottom-left-radius: 5px;
+  background-color: var(--text-input-field);
+  cursor: pointer; 
+  height: 26px;
+  min-width: 26px;
+  padding: 0px;
+  font-family: inherit;
 }
 .shopping-cart {
   display: grid;
-  grid-template-columns:  auto 1fr 53px 53px auto;
+  grid-template-columns:  70px 166px 100px;
   gap: 8px;
   margin-bottom: 24px;
   align-items: center;
@@ -259,33 +276,48 @@ nav {
 .estilo-dinamico-nombre {
   color: var(--very-light-pink);
 }
-
-
+.product-price-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: start;
+}
+.product-price-container img {
+  position: relative;
+  right: -70px;
+  top: -10px;
+}
 .product-price-container p {
   display: inline-block;
+  gap: 0;
+  margin-top: 20px;
+  margin-left: 5px;
 }
-
 .estilo-dinamico-symbol {
-  font-size: var(--md);
+  font-size: var(--sm);
   font-weight: bold;
+  gap: 0px;
+  margin: 0;
 }
-
 .estilo-dinamico-precio {
   font-size: var(--md);
   font-weight: bold;
+  gap: 0px;
+  margin: 0;
 }
-
-
+.total-carrito {
+  position: absolute;
+  left: 260px;
+  color: var(--brand-color);
+}
 figure {
   position: relative;
 }
-
 figure img {
   display: block ; 
 }
 figure p {
   position: absolute;
-  top: -10px; 
+  top: -20px; 
   right: -10px;
   background-color: var(--brand-color);
   width: 20px;
