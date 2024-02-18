@@ -7,7 +7,8 @@ const shoppingCartIcon = document.querySelector(".navbar-shopping-cart");
 const productDetail = document.querySelector(".product-detail");
 const cardsContainer = document.querySelector(".cards-container");
 const productDetailSecondary = document.querySelector(".product-detail-secondary");
-const categorias = document.querySelectorAll(".boton-categoria")
+const categorias = document.querySelectorAll(".boton-categoria");
+const Amandiva = document.querySelector(".nombre-marca");
 
 function toggleDesktopMenu() {
     const isProductDetailClosed = productDetail.classList.contains("inactive");
@@ -59,10 +60,12 @@ function openProductDetailSecondary() {
 function closeProductDetailSecondary() {
     productDetailSecondary.classList.add("inactive");    
 }
+
 menuEmail.addEventListener("click", toggleDesktopMenu);
 menuMobileIcon.addEventListener("click", toggleMobileMenu);
 shoppingCartIcon.addEventListener("click", toggleProductDetail);
 productDetailCloseIcon.addEventListener("click", closeProductDetailSecondary);
+Amandiva.addEventListener("click", () => renderProducts(productList));
 
 let productListBackup = null;
 
@@ -183,7 +186,10 @@ productList.push({
     img:"c:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (1).jpeg",
 });
 
+
 const contenedorProductos = document.querySelectorAll(".cards-container")
+
+
 
 function renderProducts(arr){
 
