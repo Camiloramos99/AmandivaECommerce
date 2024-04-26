@@ -493,6 +493,82 @@ figure p {
   justify-content: center;
 }
 
+/*ANIMATED LOGO*/
+
+.logo-name-container {
+  background-color: var(--brand-color);
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+    
+}
+.animated-logo-name {
+  font-family: "Bebas Neue", sans-serif ;
+  color: var(--white);
+  font-stretch: extra-condensed;  
+  font-size: 100px;
+  white-space: nowrap;
+  letter-spacing: 0.01mm;
+  word-spacing: 2cm;
+  height: 70px; /* Altura de la mitad de la palabra */
+  position: relative;
+  animation: desplazar 90s steps(95) infinite ;
+  animation-delay: -0.5s; 
+  animation-iteration-count: infinite;
+
+
+
+}
+
+.logo-name-container2 {
+  background-color: var(--brand-color);
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+    
+}
+.animated-logo-name2 {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--white);
+  font-stretch: extra-condensed;  
+  font-size: 100px;
+  white-space: nowrap;
+  letter-spacing: 0.01mm;
+  word-spacing: 2cm;
+  height: 170px; /* Altura de la mitad de la palabra */
+  position: relative;
+  animation: desplazar 90s steps(95) infinite ;
+  animation-iteration-count: infinite;
+
+
+}
+
+
+
+@keyframes desplazar {
+  from {
+    transform: translateX(-25%);
+  }
+  to {
+    transform: translateX(25%); 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 640px) {
   .menu {
     display: block;
