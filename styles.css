@@ -517,19 +517,14 @@ figure p {
   animation: desplazar 90s steps(95) infinite ;
   animation-delay: -0.5s; 
   animation-iteration-count: infinite;
-
-
-
 }
-
 .logo-name-container2 {
   background-color: var(--brand-color);
   height: 50px;
   overflow: hidden;
   width: 100%;
   display: flex;
-  align-items: center;
-    
+  align-items: center; 
 }
 .animated-logo-name2 {
   font-family: "Bebas Neue", sans-serif;
@@ -543,9 +538,33 @@ figure p {
   position: relative;
   animation: desplazar 90s steps(95) infinite ;
   animation-iteration-count: infinite;
+}
 
+/*NEWSLETTER*/
+
+.newsletter-container {
+  display: grid;
+  height: 400px;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.section-2 {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr 1fr;
 
 }
+
+.newsletter-tittle {
+  text-align: center;
+}
+
+.container-customer-email {
+  align-content: first baseline;
+}
+
 
 
 
