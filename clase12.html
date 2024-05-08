@@ -7,14 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <title>Amandiva: Tienda Online</title>
   <style>
     :root {
       --white: #FFFFFF;
       --black: #000000;
       --very-light-pink: #C7C7C7;
       --text-input-field: #F7F7F7;
-      --hospital-green: #ACD9B2;
+      --brand-color: #AC2EBB;
       --sm: 14px;
       --md: 16px;
       --lg: 18px;
@@ -24,25 +24,55 @@
       font-family: 'Quicksand', sans-serif;
     }
     .product-detail {
-      width: 360px;
-      padding-bottom: 24px;
-      position: absolute;
-      right: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      grid-template-rows: repeat(2, 1fr);
+      height: 850px;
+      grid-gap: 0.1em;
+
     }
-    .product-detail-close {
-      background: var(--white);
-      width: 14px;
-      height: 14px;
-      position: absolute;
-      top: 24px;
-      left: 24px;
-      z-index: 2;
-      padding: 12px;
-      border-radius: 50%;
+    #img1 {
+      display: grid;
+      grid-column: 1 / 2;
+      grid-row: 1/ 2;
     }
-    .product-detail-close:hover {
-      cursor: pointer;
+
+    #img2 {
+      display: grid;
+      grid-column: 2 / 3;
+      grid-row: 1/ 2;
     }
+
+    #img3 {
+      display: grid;
+      grid-column: 1 / 2;
+      grid-row: 2/ 3;
+    }
+
+    #img4 {
+      display: grid;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .product-info .photos-container {
+      height: 50%;
+      width: 50%;
+    }
+
+    .product-info {
+      grid-row: 1 / 3;
+   
+    }
+    .photos-container {
+      height: 100%;
+      width: 100%;
+    }
+    .photos-container img {
+      height: 100%;
+      width: 100%;
+    }
+
     .product-detail > img:nth-child(2) {
       width: 100%;
       height: 360px;
@@ -70,8 +100,9 @@
       margin-top: 0;
       margin-bottom: 36px;
     }
+
     .primary-button {
-      background-color: var(--hospital-green);
+      background-color: var(--brand-color);
       border-radius: 8px;
       border: none;
       color: var(--white);
@@ -80,6 +111,11 @@
       font-size: var(--md);
       font-weight: bold;
       height: 50px;
+    }
+
+    button img {
+      height: 40px;
+      width: 40px;
     }
     .add-to-cart-button {
       display: flex;
@@ -94,20 +130,46 @@
   </style>
 </head>
 <body>
+
   <aside class="product-detail">
-    <div class="product-detail-close">
-      <img src="./icons/icon_close.png" alt="close">
-    </div>
-    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-    <div class="product-info">
-      <p>$35,00</p>
-      <p>Bike</p>
-      <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-      <button class="primary-button add-to-cart-button">
-        <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
-        Add to cart
-      </button>
-    </div>
+
+      <div class="photos-container" id="img1">
+        <img src="C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (1).jpeg" alt="bike">
+      </div>
+  
+      <div class="photos-container" id="img2">
+        <img src="C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (1).jpeg" alt="bike">
+      </div>
+
+      <div class="photos-container" id="img3">
+        <img src="C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (1).jpeg" alt="bike">
+      </div>
+
+      <div class="photos-container" id="img4">
+        <img src="C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (1).jpeg" alt="bike">
+      </div>
+  
+      <div class="product-info">
+        <p>Bike</p>
+        <p>$35,00</p>
+        <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
+        <br>
+        <br>
+        <br><br><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus qui voluptatibus ipsum voluptates vero sequi veritatis, ut odio eaque illo. Assumenda alias rerum eaque repudiandae ipsum, quis saepe temporibus cum?</p>
+        <br>
+        <br>
+        <br><br><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus qui voluptatibus ipsum voluptates vero sequi veritatis, ut odio eaque illo. Assumenda alias rerum eaque repudiandae ipsum, quis saepe temporibus cum?</p>
+        
+        <button class="primary-button add-to-cart-button">
+          <img src=".\icons\add-to-basket-5854 (1).png">
+          AGREGAR AL CARRITO
+        </button>
+  
+      </div>
+
   </aside>
+
 </body>
 </html>
