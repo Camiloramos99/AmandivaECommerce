@@ -4,6 +4,8 @@
   --very-light-pink: #C7C7C7;
   --text-input-field: #F7F7F7;
   --brand-color: #AC2EBB;
+  --secondary-brand-color: #4A306D;
+  --third-brand-color: #E8D7F1;
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
@@ -399,11 +401,12 @@ figure p {
 .product-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   margin-top: 12px;
 }
 .product-info figure {
-  margin: 0;
+  margin: 7px;
+  margin-right: 0;
 }
 .product-info figure img {
   width: 35px;
@@ -496,7 +499,7 @@ figure p {
 /*ANIMATED LOGO*/
 
 .logo-name-container {
-  background-color: var(--brand-color);
+  background-color: var( --secondary-brand-color);
   height: 50px;
   overflow: hidden;
   width: 100%;
@@ -506,7 +509,7 @@ figure p {
 }
 .animated-logo-name {
   font-family: "Bebas Neue", sans-serif ;
-  color: var(--white);
+  color: var(--brand-color);
   font-stretch: extra-condensed;  
   font-size: 100px;
   white-space: nowrap;
@@ -519,7 +522,7 @@ figure p {
   animation-iteration-count: infinite;
 }
 .logo-name-container2 {
-  background-color: var(--brand-color);
+  background-color: var(--secondary-brand-color);
   height: 50px;
   overflow: hidden;
   width: 100%;
@@ -528,7 +531,7 @@ figure p {
 }
 .animated-logo-name2 {
   font-family: "Bebas Neue", sans-serif;
-  color: var(--white);
+  color: var(--third-brand-color);
   font-stretch: extra-condensed;  
   font-size: 100px;
   white-space: nowrap;
@@ -544,29 +547,59 @@ figure p {
 
 .newsletter-container {
   display: grid;
-  height: 400px;
+  background-color: var(--secondary-brand-color);
+  height: 150px;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
-}
-
-
-.section-2 {
-  display: grid;
-  place-items: center;
-  grid-template-rows: 1fr 1fr;
-
-}
-
-.newsletter-tittle {
+  grid-template-columns: 200px 1fr 200px;
   text-align: center;
+
 }
-
-.container-customer-email {
-  align-content: first baseline;
+.newsletter-content {
+  display: grid;
+  grid-column: 2 / 3;
 }
-
-
-
+.newsletter-tittle {
+  color: var(--third-brand-color);
+  font-family: "Labrada", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;  
+  margin-bottom: 0;
+}
+.newsletter-message {
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+.box-customer-email {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+.box-customer-email i {
+  background-color: var(--brand-color);
+  width: 40px;
+  line-height: 40px;
+}
+.email-input, .suscribe-button {
+  border: none;
+  outline: none;
+}
+.email-input {
+  width: 0px;
+  transition: 0.6s;
+}
+.box-customer-email:hover > .email-input,.email-input:focus {
+  width: 260px;
+  padding: 0 10px;
+}
+.suscribe-button {
+  background-color: var(--brand-color);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+}
 
 @keyframes desplazar {
   from {
