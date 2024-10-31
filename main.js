@@ -119,49 +119,58 @@ function agregarEventoClickACategorias(categorias, productList, renderProducts) 
 let productList = [];
 
 productList.push({
-    price: 41900,
-    name: "Buzo Amsterdam",
+    price: 25990,
+    name: "Black Fleece Cropped Top",
     categoria: {
-        nombre: "Buzos",
-        id: "Buzos"
+        nombre: "tops",
+        id: "tops"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18.jpeg", 
+    img:"images/BlackFleeceCroppedTop.webp",
 });
 productList.push({
-    price: 36000,
-    name: "Hoodie Honky Tonk",
+    price: 41900,
+    name: "Amsterdam Sweater",
     categoria: {
-        nombre: "Hoodies",
-        id:"Hoodies"
+        nombre: "Sweaters",
+        id: "Sweaters"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (1).jpeg",
+    img:"images/AmsterdamSweater.jpeg", 
+});
+productList.push({
+    price: 29099,
+    name: "Knitted Cropped Sweater - V Hem",
+    categoria: {
+        nombre: "Sweaters",
+        id: "Sweaters"
+    },
+    img:"images/Knitted Cropped Sweater - V Hem.webp",
 });
 productList.push({
     price: 15199,
-    name: "Blusa Corta",
+    name: "Classic Top",
     categoria: {
-        nombre: "Blusas",
-        id: "Blusas"
+        nombre: "tops",
+        id: "tops"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.17.jpeg",
+    img:"images/ClassicTop.jpeg",
 });
 productList.push({
     price: 37999,
-    name: "Blusa Manga Larga",
+    name: "Long Sleeve Top",
     categoria: {
-        nombre: "Blusas",
-        id: "Blusas"
+        nombre: "tops",
+        id: "tops"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.16.jpeg",
+    img:"images/LongSleeveTop.jpeg",
 });
 productList.push({
     price: 17500,
-    name: "Buzo Corto Tejido",
+    name: "Knitted Cropped Sweater",
     categoria: {
-        nombre: "Buzos",
-        id: "Buzos"
+        nombre: "Sweaters",
+        id: "Sweaters"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19 (2).jpeg",
+    img:"images/KnittedCroppedSweater.jpeg",
 });
 productList.push({
     price: 39799,
@@ -170,43 +179,52 @@ productList.push({
         nombre: "Hoodies",
         id: "Hoodies"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.19.jpeg",
+    img:"images/HoodieOversize.jpeg",
 });
 productList.push({
     price: 24999,
-    name: "Hoodie Corto Frisa Crema",
+    name: "Cropped Cream Hoodie in Fleece",
     categoria: {
         nombre: "Hoodies",
         id: "Hoodies"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (3).jpeg",
+    img:"images/CroppedCreamHoodieinFleece.jpeg",
 });
 productList.push({
     price: 35000,
-    name: "Hoodie Oversize Fresa",
+    name: "Hoodie Oversize Strawberry",
     categoria: {
         nombre: "Hoodies",
         id: "Hoodies"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (2).jpeg",
+    img:"images/HoodieOversizeStrawberry.jpeg",
 });
 productList.push({
-    price: 29099,
-    name: "Buzo Corto Tejido - Ruedo En V",
+    price: 36000,
+    name: "Hoodie Honky Tonk",
     categoria: {
-        nombre: "Buzos",
-        id: "Buzos"
+        nombre: "Hoodies",
+        id:"Hoodies"
     },
-    img:"C:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.16 (1).jpeg",
+    img:"images/HoodieHonkyTonk.jpeg",
+});
+productList.push({
+    price: 25990,
+    name: "Blue Long Sleeve Top",
+    categoria: {
+        nombre: "tops",
+        id: "tops"
+    },
+    img:"images/BlueLongSleeveTop.webp",
 });
 productList.push({
     price: 26000,
-    name: "Buzo New York",
+    name: "Sweater New York",
     categoria: {
-        nombre: "Buzos",
-        id: "Buzos"
+        nombre: "Sweaters",
+        id: "Sweaters"
     },
-    img:"c:/Users/Camil/Downloads/WhatsApp Image 2024-01-25 at 11.18.18 (1).jpeg",
+    img:"images/SweaterNewYork.jpeg",
 });
 
 
