@@ -26,7 +26,7 @@ header {
   transition: top 0.5s;
 }
 .header-hidden {
-  top: -100px; /* Mueve el encabezado hacia arriba para ocultarlo */
+  top: -100px; 
 }
 .promotional-messages {
   background-color: var(--brand-color);
@@ -60,15 +60,15 @@ nav {
 }
 .nombre-marca {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 30px; /* Tamaño del texto */
+  font-size: 30px; 
   margin: auto;
   cursor: pointer;
-  font-weight: bold; /* Peso del texto (negrita) */
-  color: var(--brand-color); /* Color del texto */
-  text-transform: uppercase; /* Convertir el texto a mayúsculas */
-  text-align: center; /* Alinear el texto al centro */
-  letter-spacing: 2px; /* Espaciado entre letras */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra del texto */
+  font-weight: bold; 
+  color: var(--brand-color); 
+  text-transform: uppercase; 
+  text-align: center;
+  letter-spacing: 2px; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -107,6 +107,7 @@ nav {
   cursor: pointer;
   font-size: var(--sm);
   margin-right: 12px;
+  display: none;
 }
 .navbar-shopping-cart {
   position: relative;
@@ -199,7 +200,7 @@ nav {
   font-size: var(--sm);
   color: var(--brand-color) !important;
 }
-/* aside (product detail y carrito) */
+/* aside (product detail and cart) */
 
 .product-detail {
   background-color: var(--white);
@@ -208,7 +209,7 @@ nav {
   box-sizing: border-box;
   position: absolute;
   right: 0;
-  z-index: 10; /* Z-index más alto para el carrito */
+  z-index: 10; 
 
 }
 .title-container {
@@ -262,13 +263,13 @@ nav {
   border-radius: 8px;
 }
 #addition-btn {
-  display: inline-flex; /* Utilizar flexbox */
-  justify-content: center; /* Centrar contenido horizontalmente */
+  display: inline-flex; 
+  justify-content: center;
   align-items: center;
   text-align: center;
   border: none;
   border: 1px solid var(--brand-color); 
-  border-left: none; /* Quita el borde izquierdo */
+  border-left: none; 
   opacity: 75%; 
   border-top-right-radius: 5px; 
   border-bottom-right-radius: 5px;
@@ -280,14 +281,14 @@ nav {
   font-family: inherit;
 }
 #subtraction-btn {
-  display: inline-flex; /* Utilizar flexbox */
-  justify-content: center; /* Centrar contenido horizontalmente */
+  display: inline-flex; 
+  justify-content: center;
   align-items: center;
   text-align: center;
   border: none;
   border: 1px solid var(--brand-color); 
   opacity: 75%;
-  border-right: none; /* Quita el borde derecho */
+  border-right: none;
   border-top-left-radius: 5px; 
   border-bottom-left-radius: 5px;
   background-color: var(--text-input-field);
@@ -365,7 +366,7 @@ figure p {
   color: var(--white);
   border-radius: 50%; 
   text-align: center;
-  line-height: 20px;         /* Centra verticalmente el número */
+  line-height: 20px;         
   font-size: 12px;
 }
 .primary-button {
@@ -427,7 +428,7 @@ figure p {
   margin-top: 0;
   margin-bottom: 0;
   color: var(--very-light-pink);
-  z-index: 5; /* Z-index más bajo para el botón */
+  z-index: 5; 
 
 }
 /*PRODUCT DETAIL SECONDARY*/

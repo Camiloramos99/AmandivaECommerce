@@ -18,10 +18,10 @@ window.addEventListener('scroll', function() {
     const currentScroll = window.scrollY || document.documentElement.scrollTop;
 
     if (currentScroll > lastScrollTop) {
-        // Se está desplazando hacia abajo
+        // It is scrolling downo
         header.classList.add('header-hidden');
     } else {
-        // Se está desplazando hacia arriba
+        // Scrolling up
         header.classList.remove('header-hidden');
     }
 
@@ -285,7 +285,7 @@ function renderProducts(arr){
 renderProducts(productList);
 agregarEventoClickACategorias(categorias, productList, renderProducts);
 
-    /* Carrito De Compras */
+    /* Shopping Cart */
 
 var carrito = [];
 
@@ -392,13 +392,13 @@ function actualizarCarrito() {
         symbolPrice.textContent = producto.symbol;
         symbolPrice.classList.add('estilo-dinamico-symbol'); 
 
-        const deleteIcons = document.createElement("img");               // Crea boton eliminar
+        const deleteIcons = document.createElement("img");               // Create delete button
         deleteIcons.setAttribute("src", "./icons/icon_close.png");
         deleteIcons.classList.add("elimina-producto"); 
         
-        deleteIcons.addEventListener('click', () => {                    // Escucha el click en icono ELIMINAR
-            const productName = producto.nombre;                          // Obtener el nombre del producto
-            eliminarProducto(productName);                               // Llamar a la función eliminarProducto con el nombre del producto
+        deleteIcons.addEventListener('click', () => {                    
+            const productName = producto.nombre;                         
+            eliminarProducto(productName);                               
         });
 
         const buttonsContainer = document.createElement("div");
