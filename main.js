@@ -503,17 +503,46 @@ function escuchaAgregarProducto(productList) {
 
 
 
+        /*NEWSLETTER*/
 
+function changeToSuscribed() {
+    const subscribeButton = document.querySelector(".subscribe-button");
+    const BoxCustomerEmail = document.querySelector(".icon-email")
+    const emailInput = document.querySelector(".email-input");
 
+    subscribeButton.addEventListener("click", checkSubscribed);
+    emailInput.addEventListener("keypress", function(event) { 
+        if (event.key === "Enter") {
+             checkSubscribed(event); 
+        } 
+    });
 
+    function checkSubscribed(event) {
+       event.preventDefault(); 
+       const email = emailInput.value.trim();
+       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+       if (email !== "" && emailRegex.test(email) ) {
+        console.log("You are subscribed");
+        subscribeButton.textContent = "subscribed!";
+        subscribeButton.classList.add("subscribed"); 
+        BoxCustomerEmail.classList.add("subscribed"); 
+        emailInput.value = "";
+        emailInput.placeholder = "Thank you!";
 
+      } else {
+        showNotification("Please enter a valid email address.");
+      }
+    }
 
+    function showNotification(message) { 
+        const alertBox = document.getElementById("alert"); 
+        alertBox.textContent = message; 
+        alertBox.style.display = "block"; 
 
-
-
-
-
-
-
-
+        setTimeout(() => { 
+            alertBox.style.display = "none";
+        }, 3000); 
+    }
+}
+changeToSuscribed();
