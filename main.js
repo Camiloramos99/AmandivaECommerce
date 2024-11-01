@@ -29,9 +29,9 @@ window.addEventListener('scroll', function() {
 });
 
 
-
-
-
+function openProductDetail() {
+    productDetail.classList.remove("inactive")   
+}
 
 function toggleDesktopMenu() {
     const isProductDetailClosed = productDetail.classList.contains("inactive");
@@ -248,6 +248,8 @@ function renderProducts(arr){
         productInfo.classList.add("product-info");
     
         const productInfoDiv = document.createElement("div");
+        productInfoDiv.classList.add("product-info-div");
+
 
         const symbolText = document.createElement("p");
         symbolText.innerText = "$";
@@ -267,9 +269,14 @@ function renderProducts(arr){
     
     
         const productInfoFigure = document.createElement("figure");
+        productInfoFigure.classList.add("product-info-figure");
+
+
         const productImgCart = document.createElement("img");
         productImgCart.setAttribute("src", "icons/add-to-basket-5854 (1).png");
         productImgCart.classList.add("agregar-al-carrito")
+        productImgCart.addEventListener("click", openProductDetail);
+
 
         productInfoFigure.appendChild(productImgCart);
     
