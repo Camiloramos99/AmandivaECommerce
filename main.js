@@ -36,8 +36,8 @@ function openProductDetail() {
 function toggleDesktopMenu() {
     const isProductDetailClosed = productDetail.classList.contains("inactive");
     
-    if(!isProductDetailClosed) {       /*si detalle de producto esta abierto */
-        productDetail.classList.add("inactive")    /*cierralo */
+    if(!isProductDetailClosed) {       
+        productDetail.classList.add("inactive")    
     }
     desktopMenu.classList.toggle("inactive");
 }
@@ -57,7 +57,6 @@ function toggleMobileMenu() {
 function toggleProductDetail() {
     const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
     const isDesktopMenuClosed = desktopMenu.classList.contains("inactive");
-    const isProductDetailSecondaryClosed = productDetailSecondary.classList.contains("inactive");
 
     if(!isDesktopMenuClosed) {
         desktopMenu.classList.add("inactive");
@@ -68,27 +67,25 @@ function toggleProductDetail() {
        
     }
 
-    if(!isProductDetailSecondaryClosed) {
-        productDetailSecondary.classList.add("inactive");
-    }
-
     productDetail.classList.toggle("inactive");
 }
 
 function openProductDetailSecondary() {
     productDetail.classList.add("inactive");
-    productDetailSecondary.classList.remove("inactive");
+    productDetailSecondary.classList.remove("inactive"); 
 }
 
 function closeProductDetailSecondary() {
-    productDetailSecondary.classList.add("inactive");    
+    if (productDetailSecondary) {
+        productDetailSecondary.classList.add("inactive");    
+    } 
 }
 
 menuEmail.addEventListener("click", toggleDesktopMenu);
 menuMobileIcon.addEventListener("click", toggleMobileMenu);
 shoppingCartIcon.addEventListener("click", toggleProductDetail);
-productDetailCloseIcon.addEventListener("click", closeProductDetailSecondary);
-Amandiva.addEventListener("click", () => renderProducts(productList));
+if (Amandiva) { Amandiva.addEventListener("click", () => { renderProducts(productList); closeProductDetailSecondary(); }); }
+  
 
 let productListBackup = null;
 
@@ -112,6 +109,8 @@ function agregarEventoClickACategorias(categorias, productList, renderProducts) 
             }
             renderProducts(productList);
             escuchaAgregarProducto();
+            closeProductDetailSecondary();
+
         });
     });
 }
@@ -553,3 +552,11 @@ function changeToSuscribed() {
     }
 }
 changeToSuscribed();
+
+
+    //PRODUCT DETAIL SECONDARY
+
+    // function renderProductDetailSecondary() {
+    //   productDetailSecondary.innerHTML = "";
+
+    // }
