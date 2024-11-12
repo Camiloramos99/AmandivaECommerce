@@ -498,45 +498,70 @@ figure p {
   margin: 24px 24px 0 24px;
 }
 .product-name {
-  font-weight: bold;
   font-size: var(--md);
   margin-top: 0;
   margin-bottom: 4px;
 }
-.product-price {
+.product-info-secondary .product-name-secondary {
+  font-weight: bolder;
+  font-size: var(--lg);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.brand-name {
+  font-size: var(--sm);
   color: var(--very-light-pink);
-  font-size: var(--md);
-  margin-bottom: 36px;
+  cursor: pointer;
+  margin-top: 0%;
+}
+.product-price {
+  color: var(--black);
+  font-size: var(--lg);
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 .installment-info {
   color: var(--brand-color);
-  font-size: var(--md);
+  font-size: var(--sm);
+  margin-bottom: 1.5rem;
 }
 .size-title {
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
   font-weight: bold;
-  font-size: var(--md);
+  font-size: var(--sm);
 }
 .Sizes {
   display: flex;
-  gap : 1rem;
+  gap : 1.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
 }
+.product-info-secondary .Sizes p:hover {
+  border: 1px solid var(--brand-color);
+  color: var(--brand-color);
+} 
+.product-info-secondary .Sizes p.selected {
+  border: 1px solid var(--brand-color);
+  color: var(--brand-color);
+ }
 .product-info-secondary .Sizes p { 
   background-color: var(--text-input-field); 
   padding: 8px 12px; 
   border-radius: 8px; 
   font-size: var(--md);
   font-weight: 700;
+  border: 1px solid transparent;
   color: var(--very-light-pink);
 }
 .description-product-title { 
-  font-weight: 700; 
-  font-size: var(--md); 
+  font-weight: bold; 
+  font-size: var(--sm); 
   margin-top: 24px; 
 }
 .description {
   font-size: var(--sm); 
   color: var(--very-light-pink);
+  margin-bottom: 1.5rem;
 }
 .primary-button {
   background-color: var(--brand-color);

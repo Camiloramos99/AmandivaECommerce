@@ -558,6 +558,8 @@ changeToSuscribed();
 
     //PRODUCT DETAIL SECONDARY
 
+const brandNameInDetail = document.querySelector(".brand-name");
+const sizeElements = document.querySelectorAll('.product-info-secondary .Sizes p');
 
 
 function renderProductDetail(e) {
@@ -566,7 +568,7 @@ function renderProductDetail(e) {
     const productPrice = productoSeleccionado.querySelector(".product-price");
     const productImage = productoSeleccionado.querySelector("img").src;
 
-    const modalProductName = document.querySelector(".product-detail-secondary .product-name");
+    const modalProductName = document.querySelector(".product-detail-secondary .product-name-secondary");
     const modalProductPrice = document.querySelector(".product-detail-secondary .product-price");
     const modalInstallmentPrice = document.querySelector(".installment-price");
     const modalProductImage = document.querySelector(".photos-container img");
@@ -575,8 +577,16 @@ function renderProductDetail(e) {
     const dividedPrice = productPrice.innerText / divisor;
 
     modalProductName.innerText = productName.innerText;
-    modalProductPrice.innerText = "$" + productPrice.innerText;
-    modalInstallmentPrice.innerText = "$" + dividedPrice.toFixed();
-    modalProductImage.src = productImage;
-    
+    modalProductPrice.innerText = "$ " + productPrice.innerText;
+    modalInstallmentPrice.innerText = dividedPrice.toFixed();
+    modalProductImage.src = productImage; 
 }
+
+sizeElements.forEach(size => {
+  size.addEventListener('click', function() {
+    sizeElements.forEach(el => el.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+
+if (brandNameInDetail) { brandNameInDetail.addEventListener("click", () => { renderProducts(productList); closeProductDetailSecondary(); }); }
