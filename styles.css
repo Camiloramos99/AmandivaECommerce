@@ -407,6 +407,7 @@ figure p {
 }
 .product-card {
   width: 240px;
+  cursor: pointer;
 }
 .product-card img {
   width: 240px;
@@ -478,7 +479,6 @@ figure p {
 .product-info-secondary {
   grid-row: 1 / 2;
   grid-column: 3/ 4;
-
 }
 .photos-container {
   height: 100%;

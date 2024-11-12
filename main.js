@@ -70,9 +70,11 @@ function toggleProductDetail() {
     productDetail.classList.toggle("inactive");
 }
 
-function openProductDetailSecondary() {
+function openProductDetailSecondary(event) {
     productDetail.classList.add("inactive");
     productDetailSecondary.classList.remove("inactive"); 
+    //Aquí hay que agregar la funcion 
+    renderProductDetail(event);
 }
 
 function closeProductDetailSecondary() {
@@ -238,10 +240,10 @@ function renderProducts(arr){
     for (product of arr){
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
-    
+        productCard.addEventListener("click", openProductDetailSecondary);
+
         const productImg = document.createElement("img");
         productImg.setAttribute("src", product.img);
-        productImg.addEventListener("click", openProductDetailSecondary);
     
         const productInfo = document.createElement("div");
         productInfo.classList.add("product-info");
@@ -556,7 +558,25 @@ changeToSuscribed();
 
     //PRODUCT DETAIL SECONDARY
 
-    // function renderProductDetailSecondary() {
-    //   productDetailSecondary.innerHTML = "";
 
-    // }
+
+function renderProductDetail(e) {
+    const productoSeleccionado = e.currentTarget;
+    const productName = productoSeleccionado.querySelector(".product-name");
+    const productPrice = productoSeleccionado.querySelector(".product-price");
+    const productImage = productoSeleccionado.querySelector("img").src;
+
+    const modalProductName = document.querySelector(".product-detail-secondary .product-name");
+    const modalProductPrice = document.querySelector(".product-detail-secondary .product-price");
+    const modalInstallmentPrice = document.querySelector(".installment-price");
+    const modalProductImage = document.querySelector(".photos-container img");
+
+    const divisor = 3;
+    const dividedPrice = productPrice.innerText / divisor;
+
+    modalProductName.innerText = productName.innerText;
+    modalProductPrice.innerText = "$" + productPrice.innerText;
+    modalInstallmentPrice.innerText = "$" + dividedPrice.toFixed();
+    modalProductImage.src = productImage;
+    
+}
