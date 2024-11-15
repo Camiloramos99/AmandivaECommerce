@@ -73,7 +73,6 @@ function toggleProductDetail() {
 function openProductDetailSecondary(event) {
     productDetail.classList.add("inactive");
     productDetailSecondary.classList.remove("inactive"); 
-    //Aquí hay que agregar la funcion 
     renderProductDetail(event);
 }
 
@@ -127,6 +126,7 @@ productList.push({
         id: "tops"
     },
     img:"images/BlackFleeceCroppedTop.webp",
+    id: "1",
 });
 productList.push({
     price: 41900,
@@ -135,7 +135,8 @@ productList.push({
         nombre: "Sweaters",
         id: "Sweaters"
     },
-    img:"images/AmsterdamSweater.jpeg", 
+    img:"images/AmsterdamSweater.jpeg",
+    id: "2",
 });
 productList.push({
     price: 29099,
@@ -145,6 +146,7 @@ productList.push({
         id: "Sweaters"
     },
     img:"images/Knitted Cropped Sweater - V Hem.webp",
+    id: "3",
 });
 productList.push({
     price: 15199,
@@ -154,6 +156,7 @@ productList.push({
         id: "tops"
     },
     img:"images/ClassicTop.jpeg",
+    id: "4",
 });
 productList.push({
     price: 37999,
@@ -163,6 +166,7 @@ productList.push({
         id: "tops"
     },
     img:"images/LongSleeveTop.jpeg",
+    id: "5",
 });
 productList.push({
     price: 17500,
@@ -172,6 +176,7 @@ productList.push({
         id: "Sweaters"
     },
     img:"images/KnittedCroppedSweater.jpeg",
+    id: "6",
 });
 productList.push({
     price: 39799,
@@ -181,6 +186,7 @@ productList.push({
         id: "Hoodies"
     },
     img:"images/HoodieOversize.jpeg",
+    id: "7",
 });
 productList.push({
     price: 24999,
@@ -190,6 +196,7 @@ productList.push({
         id: "Hoodies"
     },
     img:"images/CroppedCreamHoodieinFleece.jpeg",
+    id: "8",
 });
 productList.push({
     price: 35000,
@@ -199,6 +206,7 @@ productList.push({
         id: "Hoodies"
     },
     img:"images/HoodieOversizeStrawberry.jpeg",
+    id: "9",
 });
 productList.push({
     price: 36000,
@@ -208,6 +216,7 @@ productList.push({
         id:"Hoodies"
     },
     img:"images/HoodieHonkyTonk.jpeg",
+    id: "10",
 });
 productList.push({
     price: 25990,
@@ -217,6 +226,7 @@ productList.push({
         id: "tops"
     },
     img:"images/BlueLongSleeveTop.webp",
+    id: "11",
 });
 productList.push({
     price: 26000,
@@ -226,6 +236,7 @@ productList.push({
         id: "Sweaters"
     },
     img:"images/SweaterNewYork.jpeg",
+    id: "12",
 });
 
 
@@ -240,6 +251,7 @@ function renderProducts(arr){
     for (product of arr){
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
+        productCard.setAttribute("id", product.id);
         productCard.addEventListener("click", openProductDetailSecondary);
 
         const productImg = document.createElement("img");
@@ -307,17 +319,24 @@ const productCounter = document.querySelector(".contador-productos");
 var sumadeprecios;
 
 function agregarProducto(e) {
-    const productoSeleccionado = e.currentTarget.parentElement.parentElement.parentElement;
-    const productPrice = productoSeleccionado.querySelector('.product-price');
-    const symbolPrice = productoSeleccionado.querySelector('.symbol-price');
-    const productName = productoSeleccionado.querySelector(".product-name");
-    const productImg = productoSeleccionado.querySelector("img").src;
+    const productId = document.querySelector(".product-id").innerText;   
+        if (productId) {
+            console.log(`Product ID from DOM: ${productId}`);  
+        } else {
+            console.error("No product-id element found");
+        }  
+
+    const selectedProduct = productList.find(product => product.id === productId);
+    const productPrice =  selectedProduct.price;
+    const symbol = "$";
+    const productName = selectedProduct.name;
+    const productImg = selectedProduct.img;
 
     const producto = {
-        precioInicial: parseFloat(productPrice.innerText),
-        precio: parseFloat(productPrice.innerText),
-        symbol: symbolPrice.innerText,
-        nombre: productName.innerText,
+        precioInicial: parseFloat(productPrice),
+        precio: parseFloat(productPrice),
+        symbol: symbol,
+        nombre: productName,
         imagen: productImg,
         cantidad: 1
     };
@@ -327,18 +346,6 @@ function agregarProducto(e) {
         productoExistente.cantidad++; 
         if (productoExistente.cantidad > 1) {
             productoExistente.precio = productoExistente.precioInicial * productoExistente.cantidad;
-/* 
-            function priceFormat(precio) {
-                precio = new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                    minimumFractionDigits: 2
-            
-                });
-            };
-
-
-*/
         }
     } else {
         carrito.push(producto);  
@@ -349,7 +356,7 @@ function agregarProducto(e) {
 };
 
 function eliminarProducto(productName) {
-    carrito = carrito.filter(producto => producto.nombre !== productName); // Filtrar el carrito para eliminar el producto con el mismo nombre
+    carrito = carrito.filter(producto => producto.nombre !== productName); 
     actualizarCarrito();
     TotalCarrito();
     obtenerSumaCantidades();
@@ -497,7 +504,6 @@ function TotalCarrito() {
 
 function escuchaAgregarProducto(productList) {
     const productImgCarts = document.querySelectorAll(".agregar-al-carrito");
-
         productImgCarts.forEach((productImgCart) => {
         productImgCart.addEventListener("click", (e) => agregarProducto(e, productList));
     });    
@@ -511,7 +517,7 @@ function escuchaAgregarProducto(productList) {
 
 
 
-        /*NEWSLETTER*/
+    /*NEWSLETTER*/
 
 function changeToSuscribed() {
     const subscribeButton = document.querySelector(".subscribe-button");
@@ -556,7 +562,7 @@ function changeToSuscribed() {
 changeToSuscribed();
 
 
-    //PRODUCT DETAIL SECONDARY
+    //PRODUCT DETAIL SECONDARY (MODAL)
 
 const brandNameInDetail = document.querySelector(".brand-name");
 const sizeElements = document.querySelectorAll('.product-info-secondary .Sizes p');
@@ -567,11 +573,13 @@ function renderProductDetail(e) {
     const productName = productoSeleccionado.querySelector(".product-name");
     const productPrice = productoSeleccionado.querySelector(".product-price");
     const productImage = productoSeleccionado.querySelector("img").src;
+    const productId = productoSeleccionado.getAttribute("id");
 
     const modalProductName = document.querySelector(".product-detail-secondary .product-name-secondary");
     const modalProductPrice = document.querySelector(".product-detail-secondary .product-price");
     const modalInstallmentPrice = document.querySelector(".installment-price");
     const modalProductImage = document.querySelector(".photos-container img");
+    const modalProductId = document.querySelector(".product-id");
 
     const divisor = 3;
     const dividedPrice = productPrice.innerText / divisor;
@@ -580,13 +588,25 @@ function renderProductDetail(e) {
     modalProductPrice.innerText = "$ " + productPrice.innerText;
     modalInstallmentPrice.innerText = dividedPrice.toFixed();
     modalProductImage.src = productImage; 
+    modalProductId.innerText = productId;
 }
 
+    // Toggle 'selected' class on size elements
+
 sizeElements.forEach(size => {
-  size.addEventListener('click', function() {
+size.addEventListener('click', function() {
     sizeElements.forEach(el => el.classList.remove('selected'));
     this.classList.add('selected');
-  });
+});
 });
 
-if (brandNameInDetail) { brandNameInDetail.addEventListener("click", () => { renderProducts(productList); closeProductDetailSecondary(); }); }
+if (brandNameInDetail) { 
+    brandNameInDetail.addEventListener("click", () => { 
+        renderProducts(productList); 
+        closeProductDetailSecondary(); }); 
+    }
+
+const addToCart = document.querySelector(".add-to-cart-button");
+    addToCart.addEventListener("click", (e) => {
+        agregarProducto(e);
+    });

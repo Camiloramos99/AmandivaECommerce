@@ -228,7 +228,8 @@ nav {
 
 }
 .title-container {
-  display: flex;
+  display: grid;
+  justify-items: center;
 }
 .title-container img {
   transform: rotate(180deg);
@@ -237,6 +238,7 @@ nav {
 .title {
   font-size: var(--lg);
   font-weight: bold;
+  justify-self: center;
 }
 .order {
   display: grid;
@@ -437,6 +439,7 @@ figure p {
   width: 35px;
   height: 35px;
   cursor: pointer;
+  display: none;  
 }
 .product-info div p:nth-child(1) {
   display: inline-block;
@@ -519,6 +522,9 @@ figure p {
   font-size: var(--lg);
   font-weight: bold;
   margin-bottom: 1rem;
+}
+.product-id {
+  display: none;
 }
 .installment-info {
   color: var(--brand-color);
