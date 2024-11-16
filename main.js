@@ -247,6 +247,10 @@ const contenedorProductos = document.querySelectorAll(".cards-container")
 function renderProducts(arr){
 
     cardsContainer.innerHTML = '';
+    if (arr.length == 0) { 
+        cardsContainer.style.height = '115vh'; 
+    } else {
+        cardsContainer.style.height = 'auto'; 
 
     for (product of arr){
         const productCard = document.createElement("div");
@@ -302,6 +306,7 @@ function renderProducts(arr){
     
         cardsContainer.appendChild(productCard);
     }
+  }
 }
 renderProducts(productList);
 agregarEventoClickACategorias(categorias, productList, renderProducts);
@@ -321,11 +326,6 @@ var sumadeprecios;
 
 function agregarProducto(e) {
     const productId = document.querySelector(".product-id").innerText;   
-        if (productId) {
-            console.log(`Product ID from DOM: ${productId}`);  
-        } else {
-            console.error("No product-id element found");
-        }  
 
     const selectedProduct = productList.find(product => product.id === productId);
     const productPrice =  selectedProduct.price;
@@ -539,7 +539,6 @@ function changeToSuscribed() {
        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
        if (email !== "" && emailRegex.test(email) ) {
-        console.log("You are subscribed");
         subscribeButton.textContent = "subscribed!";
         subscribeButton.classList.add("subscribed"); 
         BoxCustomerEmail.classList.add("subscribed"); 
@@ -591,6 +590,8 @@ function renderProductDetail(e) {
     modalInstallmentPrice.innerText = dividedPrice.toFixed(3);
     modalProductImage.src = productImage; 
     modalProductId.innerText = productId;
+
+    renderProducts([]);
 }
 
     // Toggle 'selected' class on size elements
