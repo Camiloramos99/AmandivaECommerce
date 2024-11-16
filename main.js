@@ -32,6 +32,9 @@ window.addEventListener('scroll', function() {
 function openProductDetail() {
     productDetail.classList.remove("inactive")   
 }
+function closeProductDetail() {
+    productDetail.classList.add("inactive")   
+}
 
 function toggleDesktopMenu() {
     const isProductDetailClosed = productDetail.classList.contains("inactive");
@@ -93,6 +96,7 @@ let productListBackup = null;
 function agregarEventoClickACategorias(categorias, productList, renderProducts) {
     categorias.forEach((categoria) => {
         categoria.addEventListener("click", (e) => {
+            closeProductDetail();
             categorias.forEach((cat) => cat.classList.remove("selected"));
             categoria.classList.add("selected");
 
@@ -341,6 +345,9 @@ function agregarProducto(e) {
         imagen: productImg,
         cantidad: 1
     };
+    if (productCounter.innerText == 0) {
+        openProductDetail();
+    }
     const productoExistente = carrito.find(item => producto.nombre === item.nombre);
          
     if (productoExistente) {

@@ -220,12 +220,16 @@ nav {
 .product-detail {
   background-color: var(--white);
   width: 360px;
-  padding: 0 4px;
+  padding: 16px;
+  top: 88px;
   box-sizing: border-box;
   position: absolute;
   right: 0;
   z-index: 10; 
-
+  border-left: 2px solid #000; 
+  border-bottom: 2px solid #000; 
+  border-radius: 0px 0px 0px 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .title-container {
   display: grid;
@@ -239,6 +243,7 @@ nav {
   font-size: var(--lg);
   font-weight: bold;
   justify-self: center;
+  margin-top: 0%;
 }
 .order {
   display: grid;
