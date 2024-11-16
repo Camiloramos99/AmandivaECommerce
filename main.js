@@ -269,7 +269,8 @@ function renderProducts(arr){
         symbolText.classList.add("symbol-price");
 
         const productPrice = document.createElement("p");
-        productPrice.innerText =  product.price;
+
+        productPrice.innerText =  product.price.toLocaleString();
         productPrice.classList.add("product-price");
 
         const productName = document.createElement("p");
@@ -333,8 +334,8 @@ function agregarProducto(e) {
     const productImg = selectedProduct.img;
 
     const producto = {
-        precioInicial: parseFloat(productPrice),
-        precio: parseFloat(productPrice),
+        precioInicial: productPrice,
+        precio: productPrice,
         symbol: symbol,
         nombre: productName,
         imagen: productImg,
@@ -399,15 +400,12 @@ function actualizarCarrito() {
 
         const priceElements = document.createElement("div")
            
-        const productPrice = document.createElement("p");
-        productPrice.textContent = producto.precio;
-        productPrice.classList.add('estilo-dinamico-precio'); 
-        
-        const symbolPrice = document.createElement("p");
-        symbolPrice.textContent = producto.symbol;
-        symbolPrice.classList.add('estilo-dinamico-symbol'); 
+        const productPriceNode = document.createElement("p");
+        productPriceNode.classList.add('estilo-dinamico-precio'); 
+        const formattedPrice = producto.precio.toLocaleString(); 
+        productPriceNode.textContent = `${producto.symbol}${formattedPrice}`
 
-        const deleteIcons = document.createElement("img");               // Create delete button
+        const deleteIcons = document.createElement("img");               
         deleteIcons.setAttribute("src", "./icons/icon_close.png");
         deleteIcons.classList.add("elimina-producto"); 
         
@@ -428,21 +426,26 @@ function actualizarCarrito() {
             productQuantity.textContent = producto.cantidad -= 1;
             if(producto.cantidad === 0) {
                 eliminarProducto(producto.nombre); 
-            }
-            productPrice.textContent = producto.precio -= producto.precioInicial;
-            obtenerSumaCantidades();
+            }else { 
+                productQuantity.textContent = producto.cantidad; 
+                producto.precio -= producto.precioInicial; 
+                productPriceNode.textContent = `${producto.symbol}${producto.precio.toLocaleString()}`; 
+                
+            obtenerSumaCantidades(); 
             TotalCarrito();
+            }
         });
 
         const additionButton = document.createElement("button")
         additionButton.classList.add("addition-btn");
         additionButton.setAttribute("id", "addition-btn");
-
         additionButton.textContent = "+";
 
         additionButton.addEventListener("click", () =>{
             productQuantity.textContent = producto.cantidad += 1;
-            productPrice.textContent = producto.precio += producto.precioInicial;
+            producto.precio += producto.precioInicial; 
+            productPriceNode.textContent = `${producto.symbol}${producto.precio.toLocaleString()}`;
+
             obtenerSumaCantidades();
             TotalCarrito();
         });
@@ -462,8 +465,7 @@ function actualizarCarrito() {
         
         productPriceContainer.appendChild(deleteIcons);
         productPriceContainer.appendChild(priceElements);
-        priceElements.appendChild(symbolPrice);
-        priceElements.appendChild(productPrice);
+        priceElements.appendChild(productPriceNode);
 
 
         
@@ -492,7 +494,7 @@ function TotalCarrito() {
             return acc += parseFloat(producto.precio);
         }, 0);
         
-        totalCarrito.textContent =  `${"$"} ${resultado}`;
+        totalCarrito.textContent =  `${"$"} ${resultado.toLocaleString()}`;
 
 
         order.appendChild(pContainer);
@@ -586,7 +588,7 @@ function renderProductDetail(e) {
 
     modalProductName.innerText = productName.innerText;
     modalProductPrice.innerText = "$ " + productPrice.innerText;
-    modalInstallmentPrice.innerText = dividedPrice.toFixed();
+    modalInstallmentPrice.innerText = dividedPrice.toFixed(3);
     modalProductImage.src = productImage; 
     modalProductId.innerText = productId;
 }
