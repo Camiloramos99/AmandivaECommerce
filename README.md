@@ -1,4 +1,4 @@
-# [Amandiva: tienda online](https://camiloramos99.github.io/AmandivaECommerce/)
+# [Amandiva: tienda online](https://amandiva-e-commerce.vercel.app/)
 
 ## Sección en Español
 
@@ -38,11 +38,11 @@ Para iniciar la aplicación en modo desarrollo:
 > This project is licensed under the MIT License
 
 ## Autor
-Made by [Camilo Ramos]([https://camiloramos99.github.io/TodoApp/](https://www.linkedin.com/in/camilo-ramos-ba40711a2/))
+Made by [Camilo Ramos](https://www.linkedin.com/in/camilo-ramos-ba40711a2/)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-# [Amandiva: Online Store](https://camiloramos99.github.io/AmandivaECommerce/)
+# [Amandiva: Online Store](https://amandiva-e-commerce.vercel.app/)
 
 ## English Section
 
@@ -82,4 +82,4 @@ To start the application in development mode:
 > This project is licensed under the MIT License
 
 ## Author
-Made by [Camilo Ramos]([https://camiloramos99.github.io/TodoApp/](https://www.linkedin.com/in/camilo-ramos-ba40711a2/))
+Made by [Camilo Ramos](https://www.linkedin.com/in/camilo-ramos-ba40711a2/)
