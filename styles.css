@@ -215,6 +215,61 @@ nav {
   font-size: var(--sm);
   color: var(--brand-color) !important;
 }
+/* branding section */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slides img {
+  min-width: 100%;
+  height: 95vh;
+}
+
+.branding-section {
+  height: 95vh;
+  width: 100%;
+}
+
+.photoSlide1 {
+  height: 95vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.photoSlide2 {
+  height: 95vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;   
+  color: var(--white);  
+  cursor: pointer;
+  font-size: 1.5em;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
 /* aside (product detail and cart) */
 
 .product-detail {
