@@ -10,6 +10,7 @@ const productDetailSecondary = document.querySelector(".product-detail-secondary
 const categorias = document.querySelectorAll(".boton-categoria");
 const Amandiva = document.querySelector(".nombre-marca");
 const brandingSection = document.querySelector(".branding-section");
+const categoriesSection = document.querySelector(".categories-section");
 
 let lastScrollTop = 0;
 
@@ -120,10 +121,16 @@ function hideProductList() {
 
 function hideBrandingSection() {
     brandingSection.style.display = "none";
+    categoriesSection.style.display = "none";
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Esto hace que el desplazamiento sea suave
+      });
 }
 
 function showBrandingSection() {
     brandingSection.style.display = "block";
+    categoriesSection.style.display = "block";
 }
 
 menuEmail.addEventListener("click", toggleDesktopMenu);

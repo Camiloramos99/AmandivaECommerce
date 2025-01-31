@@ -692,6 +692,55 @@ button img {
   }
 }
 
+/*CATEGORIES SECTION*/
+
+.categories-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  margin-top: 10px;
+  background-color: var(--white);
+}
+
+.categories {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 90%;
+  width: 90%;
+  margin: 2px;
+  padding: 20px;
+}
+
+.categories-photos {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease; 
+}
+
+.categories:hover .categories-photos {
+  transform: scale(1.1);
+}
+
+.categories-titles {
+  position: absolute;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  justify-content: center;
+  font-size: 30px; 
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto;
+  cursor: pointer;
+  font-weight: bold; 
+  color: var(--white); 
+  text-transform: uppercase; 
+  text-align: center;
+  letter-spacing: 2px; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
 /*ANIMATED LOGO*/
 
 .logo-name-container {
