@@ -20,6 +20,7 @@ Nuestra plataforma permite a los usuarios explorar un catálogo variado, ver inf
 - Manipulación de productos en el carrito de compras
 - Animación con nombre de la marca
 - Suscripción a newsletter con animaciones
+- Sección de Branding con Carrusel: Promoción colección de temporada con un carrusel de imágenes y una oferta exclusiva de 2x1 en el producto favorito del cliente.
 
 ## Instalación
 1. Clona este repositorio:
