@@ -217,6 +217,11 @@ nav {
 }
 /* branding section */
 
+.branding-section {
+  height: 95vh;
+  width: 100%;
+}
+
 .carousel-container {
   position: relative;
   width: 100%;
@@ -228,14 +233,15 @@ nav {
   transition: transform 0.5s ease-in-out;
 }
 
-.carousel-slides img {
-  min-width: 100%;
+.slide img {
   height: 95vh;
 }
 
-.branding-section {
-  height: 95vh;
-  width: 100%;
+.slide {
+  position: relative;
+  display: flex;
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
 }
 
 .photoSlide1 {
@@ -269,6 +275,34 @@ nav {
 .next {
   right: 10px;
 }
+
+.shop-now-btn1 {
+  position: absolute;
+  font-size: medium;
+  color: var(--white);
+  left: 24%;
+  top: 89%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: text-shadow 0.3s ease-in-out; 
+}
+
+.shop-now-btn2 {
+  position: absolute;
+  font-size: medium;
+  color: var(--white);
+  left: 32%;
+  top: 89%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: text-shadow 0.3s ease-in-out; 
+}
+
+.shop-now-btn1:hover, .shop-now-btn2:hover {
+  text-shadow: 0 0 15px var(--white);
+} 
 
 /* aside (product detail and cart) */
 

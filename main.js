@@ -28,6 +28,7 @@ window.addEventListener('scroll', function() {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 
+    // branding Section
 
 let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel-slides img');
