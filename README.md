@@ -65,6 +65,7 @@ Our platform allows users to explore a varied catalog, view detailed product inf
 - Manage products in the shopping cart
 - Brand name animation
 - Subscribe to newsletter with animations
+- Branding Section with Carousel: Seasonal collection promotion with a carousel of images and an exclusive 2x1 offer on the customer's favorite product.
 
 ## Installation
 1. Clone this repository:
