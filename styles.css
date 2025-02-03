@@ -13,6 +13,8 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
+  width: auto;
+  box-sizing: border-box;
 }
 .alert {
   position: fixed;
@@ -52,7 +54,7 @@ header {
   color: var(--white);
   margin-bottom: 0%;
   margin-top: 0%;
-  font-size: 12px !important;
+  font-size: 10px !important;
   padding: 4px 0;
   font-weight: bold;
   text-align: center;
@@ -185,9 +187,10 @@ nav {
   background-color: var(--white);
   padding: 24px;
   position: absolute;
-  top: 60px;
+  top: 88px;
   left: 0%;
   width: 100%;
+  height: 100vh;
 }
 .mobile-menu a {
   text-decoration: none;
@@ -686,16 +689,13 @@ button img {
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 640px) {
-  .product-detail-secondary {
-    width: 100%;
-  }
-}
 
 /*CATEGORIES SECTION*/
 
 .categories-container {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   height: 100vh;
   width: 100%;
   margin-top: 10px;
@@ -705,9 +705,8 @@ button img {
 .categories {
   display: flex;
   position: relative;
-  flex-direction: column;
   height: 90%;
-  width: 90%;
+  width: auto;
   margin: 2px;
   padding: 20px;
 }
@@ -791,17 +790,18 @@ button img {
 /*NEWSLETTER*/
 
 .newsletter-container {
-  display: grid;
   background-color: var(--secondary-brand-color);
-  height: 150px;
+  height: auto;
   width: 100%;
-  grid-template-columns: 200px 1fr 200px;
+  padding-top: 5%;
+  padding-bottom: 5%;
   text-align: center;
+  justify-items: center;
 
 }
 .newsletter-content {
-  display: grid;
   grid-column: 2 / 3;
+  align-items: center;
 }
 .newsletter-tittle {
   color: var(--third-brand-color);
@@ -815,6 +815,7 @@ button img {
   text-align: center;
   margin: 0;
   color: white;
+  margin-bottom: 2%;
 }
 .box-customer-email {
   height: 40px;
@@ -970,6 +971,41 @@ footer {
     width: 140px;
     height: 140px;
   }
+  .branding-section {
+    height: auto;
+    margin-top: 88px;
+    width: 100%;
+  }
+  .slide img {
+    height: 60vh;
+  }
+  .photoSlide1 {
+    content: url(images/photoSlide-1Mobile.png);
+  }
+  .photoSlide2 {
+    content: url(images/photoSlide-2Mobile.jpg);
+  }
+  .categories-container {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    flex-direction: column;
+    height: auto;
+  }
+  .newsletter-container {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+.footer-container {
+  width: auto;
+  flex-direction: column;
+}
+.footer-links {
+  transform: translateX(0);
+}
+.product-detail-secondary {
+  display: block;
+  position: absolute;
+}
 }
 
 @media (min-width: 641px) {
