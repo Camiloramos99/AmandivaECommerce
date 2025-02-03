@@ -558,12 +558,13 @@ figure p {
 /*PRODUCT DETAIL SECONDARY*/
 
 .product-detail-secondary {
-  position: absolute;
+  position: relative;
   display: grid;
   grid-template-columns: 10% 35% 35% 20%; 
   grid-template-rows: auto; 
   background-color: var(--white);
   width: 100%;
+  padding-top: 120px;
   padding-bottom: 24px;
   gap: 1rem;
   z-index: 5;
@@ -749,6 +750,7 @@ button img {
   width: 100%;
   display: flex;
   align-items: center;
+  position: relative;
     
 }
 .animated-logo-name {
@@ -959,7 +961,11 @@ footer {
     width: 100%;
   }
   .product-detail-secondary {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    position: relative;
+    height: auto;
   }
   .cards-container {
     grid-template-columns: repeat(auto-fill, 140px);
@@ -995,18 +1001,17 @@ footer {
     padding-top: 10%;
     padding-bottom: 10%;
   }
-.footer-container {
-  width: auto;
-  flex-direction: column;
-}
-.footer-links {
-  transform: translateX(0);
-}
-.product-detail-secondary {
-  display: block;
-  position: absolute;
-}
-}
+  .footer-container {
+    width: auto;
+    flex-direction: column;
+  }
+  .footer-links {
+    transform: translateX(0);
+  }
+  .logo-name-container {
+    position: relative;
+  }
+  }
 
 @media (min-width: 641px) {
   .mobile-menu {

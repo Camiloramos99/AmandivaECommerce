@@ -11,6 +11,8 @@ const categorias = document.querySelectorAll(".boton-categoria");
 const Amandiva = document.querySelector(".nombre-marca");
 const brandingSection = document.querySelector(".branding-section");
 const categoriesSection = document.querySelector(".categories-section");
+const mainContainer = document.querySelector(".main-container");
+
 
 let lastScrollTop = 0;
 
@@ -106,6 +108,11 @@ function openProductDetailSecondary(event) {
     productDetail.classList.add("inactive");
     productDetailSecondary.classList.remove("inactive");
     renderProductDetail(event);
+    mainContainer.classList.add("inactive");
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
 }
 
 function closeProductDetailSecondary() { 
@@ -124,7 +131,7 @@ function hideBrandingSection() {
     categoriesSection.style.display = "none";
     window.scrollTo({
         top: 0,
-        behavior: 'smooth' // Esto hace que el desplazamiento sea suave
+        behavior: 'smooth'
       });
 }
 
@@ -139,6 +146,7 @@ shoppingCartIcon.addEventListener("click", toggleProductDetail);
 
 if (Amandiva) { 
     Amandiva.addEventListener("click", () => { 
+        mainContainer.classList.remove("inactive");
         hideProductList(); 
         closeProductDetailSecondary(); 
         closeProductDetail();
@@ -154,6 +162,7 @@ let productListBackup = null;
 function agregarEventoClickACategorias(categorias, productList, renderProducts) {
     categorias.forEach((categoria) => {
         categoria.addEventListener("click", (e) => {
+            mainContainer.classList.remove("inactive");
             closeProductDetail();
             closeProductDetailSecondary();
             categorias.forEach((cat) => cat.classList.remove("selected"));
