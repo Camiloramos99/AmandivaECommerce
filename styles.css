@@ -192,6 +192,12 @@ nav {
   width: 100%;
   height: 100vh;
 }
+.categories-mobile-title {
+  font-size: large;
+  font-family: 'Quicksand', sans-serif;
+  color: var(--brand-color);
+
+}
 .mobile-menu a {
   text-decoration: none;
   color: var(--black);

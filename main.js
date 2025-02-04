@@ -7,7 +7,7 @@ const shoppingCartIcon = document.querySelector(".navbar-shopping-cart");
 const productDetail = document.querySelector(".product-detail");
 const cardsContainer = document.querySelector(".cards-container");
 const productDetailSecondary = document.querySelector(".product-detail-secondary");
-const categorias = document.querySelectorAll(".boton-categoria");
+const categorias = document.querySelectorAll(".desktop-menu .boton-categoria, .mobile-menu .boton-categoria");
 const Amandiva = document.querySelector(".nombre-marca");
 const brandingSection = document.querySelector(".branding-section");
 const categoriesSection = document.querySelector(".categories-section");
@@ -162,6 +162,13 @@ let productListBackup = null;
 function agregarEventoClickACategorias(categorias, productList, renderProducts) {
     categorias.forEach((categoria) => {
         categoria.addEventListener("click", (e) => {
+
+            const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
+
+            if (!isMobileMenuClosed) {
+                mobileMenu.classList.add("inactive");
+            }
+
             mainContainer.classList.remove("inactive");
             closeProductDetail();
             closeProductDetailSecondary();
