@@ -12,6 +12,8 @@ const Amandiva = document.querySelector(".nombre-marca");
 const brandingSection = document.querySelector(".branding-section");
 const categoriesSection = document.querySelector(".categories-section");
 const mainContainer = document.querySelector(".main-container");
+const overlay = document.getElementById('overlay'); 
+
 
 
 let lastScrollTop = 0;
@@ -63,10 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 function openProductDetail() {
     productDetail.classList.remove("inactive");
+    document.body.classList.add("body-no-scroll");
+    overlay.style.display = 'block'; 
 }
 
 function closeProductDetail() {
     productDetail.classList.add("inactive");
+    document.body.classList.remove("body-no-scroll");
+    overlay.style.display = 'none'; 
 }
 
 function toggleDesktopMenu() {
@@ -82,26 +88,54 @@ function toggleMobileMenu() {
     const isProductDetailClosed = productDetail.classList.contains("inactive");
 
     if (!isProductDetailClosed) {
-        productDetail.classList.add("inactive");
+        closeProductDetail();
     }
     
     closeProductDetailSecondary();
-    mobileMenu.classList.toggle("inactive");
+    openProductDetail();
 }
 
+// function toggleProductDetail() {
+//     const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
+//     const isDesktopMenuClosed = desktopMenu.classList.contains("inactive");
+
+//     if (productDetail.classList.contains("inactive")) {
+//         openProductDetail();
+//     } else {
+//         closeProductDetail();
+//     }
+
+//     if (!isDesktopMenuClosed) {
+//         desktopMenu.classList.add("inactive");
+//     }
+
+//     if (!isMobileMenuClosed) {
+//         mobileMenu.classList.add("inactive");
+//     }
+// }
 function toggleProductDetail() {
-    const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
-    const isDesktopMenuClosed = desktopMenu.classList.contains("inactive");
+    const isProductDetailClosed = productDetail.classList.contains("inactive");
 
-    if (!isDesktopMenuClosed) {
-        desktopMenu.classList.add("inactive");
+    function closeIfOpen(menu) {
+        if (!menu.classList.contains("inactive")) {
+            menu.classList.add("inactive");
+        }
     }
 
-    if (!isMobileMenuClosed) {
-        mobileMenu.classList.add("inactive");
+    function openIfClose(menu) {
+        if (menu.classList.contains("inactive")) {
+            menu.classList.remove("inactive");
+        }
     }
 
-    productDetail.classList.toggle("inactive");
+    if (isProductDetailClosed) {
+        openProductDetail();  
+    } else {
+        closeProductDetail(); 
+    }
+
+    closeIfOpen(mobileMenu);
+    openIfClose(mobileMenu);
 }
 
 function openProductDetailSecondary(event) {
@@ -143,6 +177,7 @@ function showBrandingSection() {
 menuEmail.addEventListener("click", toggleDesktopMenu);
 menuMobileIcon.addEventListener("click", toggleMobileMenu);
 shoppingCartIcon.addEventListener("click", toggleProductDetail);
+overlay.addEventListener("click", closeProductDetail);
 
 if (Amandiva) { 
     Amandiva.addEventListener("click", () => { 
