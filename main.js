@@ -3,6 +3,7 @@ const desktopMenu = document.querySelector(".desktop-menu");
 const menuMobileIcon = document.querySelector(".menu");
 const productDetailCloseIcon = document.querySelector(".product-detail-close");
 const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenuIconClose = document.querySelector(".mobile-menu-icon-close");
 const shoppingCartIcon = document.querySelector(".navbar-shopping-cart");
 const productDetail = document.querySelector(".product-detail");
 const cardsContainer = document.querySelector(".cards-container");
@@ -86,16 +87,57 @@ function toggleDesktopMenu() {
     desktopMenu.classList.toggle("inactive");
 }
 
-function toggleMobileMenu() {
-    const isProductDetailClosed = productDetail.classList.contains("inactive");
+const isProductDetailClosed = productDetail.classList.contains("inactive");
+const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
 
-    if (!isProductDetailClosed) {
-        closeProductDetail();
-    }
+// function toggleMobileMenu() {
+//     const isProductDetailClosed = productDetail.classList.contains("inactive");
+//     const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
+
+//     if (!isMobileMenuClosed) {
+//         mobileMenu.classList.add("inactive");
+//     } else {
+//         mobileMenu.classList.remove("inactive")
+//     }
+
+//     if (!isProductDetailClosed) {
+//         closeProductDetail();
+//     }
     
+//     closeProductDetailSecondary();
+//     // openProductDetail();
+// }
+
+function openMobileMenu() {
+
     closeProductDetailSecondary();
-    openProductDetail();
+    mobileMenu.classList.remove("inactive")
+    menuMobileIcon.classList.add("inactive");
+    mobileMenuIconClose.classList.remove("inactive");
+
 }
+
+function closeMobileMenu() {
+
+    mobileMenu.classList.add("inactive");
+    menuMobileIcon.classList.remove("inactive");
+    mobileMenuIconClose.classList.add("inactive");
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function toggleProductDetail() {
 //     const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
@@ -115,30 +157,30 @@ function toggleMobileMenu() {
 //         mobileMenu.classList.add("inactive");
 //     }
 // }
-function toggleProductDetail() {
-    const isProductDetailClosed = productDetail.classList.contains("inactive");
+// function toggleProductDetail() {
+//     const isProductDetailClosed = productDetail.classList.contains("inactive");
 
-    function closeIfOpen(menu) {
-        if (!menu.classList.contains("inactive")) {
-            menu.classList.add("inactive");
-        }
-    }
+//     function closeIfOpen(menu) {
+//         if (!menu.classList.contains("inactive")) {
+//             menu.classList.add("inactive");
+//         }
+//     }
 
-    function openIfClose(menu) {
-        if (menu.classList.contains("inactive")) {
-            menu.classList.remove("inactive");
-        }
-    }
+//     function openIfClose(menu) {
+//         if (menu.classList.contains("inactive")) {
+//             menu.classList.remove("inactive");
+//         }
+//     }
 
-    if (isProductDetailClosed) {
-        openProductDetail();  
-    } else {
-        closeProductDetail(); 
-    }
+//     if (isProductDetailClosed) {
+//         openProductDetail();  
+//     } else {
+//         closeProductDetail(); 
+//     }
 
-    closeIfOpen(mobileMenu);
-    openIfClose(mobileMenu);
-}
+//     closeIfOpen(mobileMenu);
+//     openIfClose(mobileMenu);
+// }
 
 function openProductDetailSecondary(event) {
     productDetail.classList.add("inactive");
@@ -177,14 +219,16 @@ function showBrandingSection() {
 }
 
 menuEmail.addEventListener("click", toggleDesktopMenu);
-menuMobileIcon.addEventListener("click", toggleMobileMenu);
-shoppingCartIcon.addEventListener("click", toggleProductDetail);
+menuMobileIcon.addEventListener("click", openMobileMenu);
+mobileMenuIconClose.addEventListener("click", closeMobileMenu);
+shoppingCartIcon.addEventListener("click", openProductDetail);
 overlay.addEventListener("click", closeProductDetail);
 closeCartIcon.addEventListener("click", closeProductDetail);
 
+
 if (Amandiva) { 
     Amandiva.addEventListener("click", () => { 
-        toggleProductDetail();
+        closeMobileMenu();
         mainContainer.classList.remove("inactive");
         hideProductList(); 
         closeProductDetailSecondary(); 
