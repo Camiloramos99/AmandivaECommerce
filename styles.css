@@ -343,16 +343,25 @@ nav {
 .title-container {
   display: grid;
   justify-items: center;
+  position: relative;
 }
 .title-container img {
   transform: rotate(180deg);
   margin-right: 14px;
+  position: absolute;
+  right: -22px;
+  top: -6px;
 }
 .title {
   font-size: var(--lg);
   font-weight: bold;
   justify-self: center;
   margin-top: 0%;
+}
+.empty-cart-text {
+  justify-self: center;
+  font-size: var(--sm);
+  color: var(--brand-color);
 }
 .order {
   display: grid;

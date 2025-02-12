@@ -12,7 +12,9 @@ const Amandiva = document.querySelector(".nombre-marca");
 const brandingSection = document.querySelector(".branding-section");
 const categoriesSection = document.querySelector(".categories-section");
 const mainContainer = document.querySelector(".main-container");
-const overlay = document.getElementById('overlay'); 
+const overlay = document.getElementById("overlay"); 
+const closeCartIcon = document.getElementById("close-cart");
+const emptyCartText = document.querySelector(".empty-cart-text");
 
 
 
@@ -178,6 +180,7 @@ menuEmail.addEventListener("click", toggleDesktopMenu);
 menuMobileIcon.addEventListener("click", toggleMobileMenu);
 shoppingCartIcon.addEventListener("click", toggleProductDetail);
 overlay.addEventListener("click", closeProductDetail);
+closeCartIcon.addEventListener("click", closeProductDetail);
 
 if (Amandiva) { 
     Amandiva.addEventListener("click", () => { 
@@ -461,18 +464,28 @@ function agregarProducto(e) {
             productoExistente.precio = productoExistente.precioInicial * productoExistente.cantidad;
         }
     } else {
-        carrito.push(producto);  
+        carrito.push(producto); 
+        checkEmptyCart(); 
     }   
     actualizarCarrito();
     TotalCarrito();
     obtenerSumaCantidades();
 };
 
+function checkEmptyCart() {
+    if (carrito.length === 0) {
+        emptyCartText.classList.remove("inactive");
+    } else {
+        emptyCartText.classList.add("inactive");
+    }
+}
+
 function eliminarProducto(productName) {
     carrito = carrito.filter(producto => producto.nombre !== productName); 
     actualizarCarrito();
     TotalCarrito();
     obtenerSumaCantidades();
+    checkEmptyCart(); 
 }
 
 function filtrarProductosConCantidadMayorACero(carrito) {
