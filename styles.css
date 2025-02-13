@@ -1,18 +1,18 @@
 :root {
-  --white: #FFFFFF;
+  --white: #ffffff;
   --black: #000000;
-  --very-light-pink: #C7C7C7;
-  --text-input-field: #F7F7F7;
-  --brand-color: #AC2EBB;
-  --secondary-brand-color: #4A306D;
-  --third-brand-color: #E8D7F1;
+  --very-light-pink: #c7c7c7;
+  --text-input-field: #f7f7f7;
+  --brand-color: #ac2ebb;
+  --secondary-brand-color: #4a306d;
+  --third-brand-color: #e8d7f1;
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
 }
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   width: auto;
   box-sizing: border-box;
 }
@@ -43,12 +43,11 @@ header {
   transition: top 0.5s;
 }
 .header-hidden {
-  top: -100px; 
+  top: -100px;
 }
 .promotional-messages {
   background-color: var(--brand-color);
   line-height: 20px;
-
 }
 .promotional-messages p {
   color: var(--white);
@@ -65,7 +64,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
-  border-bottom: 1px solid var(--very-light-pink); 
+  border-bottom: 1px solid var(--very-light-pink);
 }
 .navbar-left ul li a {
   cursor: pointer;
@@ -77,16 +76,16 @@ nav {
   height: 60px;
 }
 .nombre-marca {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 30px; 
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
   margin: auto;
   cursor: pointer;
-  font-weight: bold; 
-  color: var(--brand-color); 
-  text-transform: uppercase; 
+  font-weight: bold;
+  color: var(--brand-color);
+  text-transform: uppercase;
   text-align: center;
-  letter-spacing: 2px; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -115,11 +114,11 @@ nav {
 .navbar-right ul li a:hover {
   border: 1px solid var(--brand-color);
   color: var(--brand-color);
-} 
+}
 .navbar-left ul li a.selected {
   border: 1px solid var(--brand-color);
   color: var(--brand-color);
- }
+}
 .navbar-email {
   color: var(--very-light-pink);
   cursor: pointer;
@@ -151,7 +150,7 @@ nav {
   right: 60px;
   width: 100px;
   height: auto;
-  border: 1px solid var(--very-light-pink); 
+  border: 1px solid var(--very-light-pink);
   border-radius: 6px;
   padding: 20px 20px 0 20px;
 }
@@ -169,7 +168,7 @@ nav {
 }
 .desktop-menu ul li:last-child {
   padding-top: 20px;
-  border-top: 1px solid var(--very-light-pink); 
+  border-top: 1px solid var(--very-light-pink);
 }
 .desktop-menu ul li:last-child a {
   color: var(--brand-color);
@@ -195,15 +194,14 @@ nav {
 }
 .categories-mobile-title {
   font-size: large;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: var(--brand-color);
-
 }
 .mobile-menu a {
   text-decoration: none;
   color: var(--black);
   font-weight: bold;
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
 }
 .mobile-menu ul {
   padding: 0;
@@ -211,8 +209,8 @@ nav {
   list-style: none;
 }
 .mobile-menu ul:nth-child(1) {
-   border-bottom: 1px solid var(--very-light-pink); 
-}  
+  border-bottom: 1px solid var(--very-light-pink);
+}
 
 .mobile-menu ul li {
   margin-bottom: 24px;
@@ -267,12 +265,13 @@ nav {
   object-position: center;
 }
 
-.prev, .next {
+.prev,
+.next {
   position: absolute;
   top: 50%;
   background: none;
-  border: none;   
-  color: var(--white);  
+  border: none;
+  color: var(--white);
   cursor: pointer;
   font-size: 1.5em;
   transform: translateY(-50%);
@@ -295,7 +294,7 @@ nav {
   background: none;
   border: none;
   cursor: pointer;
-  transition: text-shadow 0.3s ease-in-out; 
+  transition: text-shadow 0.3s ease-in-out;
 }
 
 .shop-now-btn2 {
@@ -307,12 +306,13 @@ nav {
   background: none;
   border: none;
   cursor: pointer;
-  transition: text-shadow 0.3s ease-in-out; 
+  transition: text-shadow 0.3s ease-in-out;
 }
 
-.shop-now-btn1:hover, .shop-now-btn2:hover {
+.shop-now-btn1:hover,
+.shop-now-btn2:hover {
   text-shadow: 0 0 15px var(--white);
-} 
+}
 
 /* aside (product detail and cart) */
 
@@ -326,8 +326,8 @@ nav {
   box-sizing: border-box;
   position: fixed;
   right: 0;
-  z-index: 1200; 
-  border-radius: 0px 0px 0px 8px; 
+  z-index: 1200;
+  border-radius: 0px 0px 0px 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
 }
@@ -338,8 +338,8 @@ nav {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1100; 
-  display: none; 
+  z-index: 1100;
+  display: none;
 }
 .title-container {
   display: grid;
@@ -394,48 +394,47 @@ nav {
 }
 .container-info-products-cart p {
   margin-left: 3px;
-
 }
 .container-info-products-cart .btns-container {
   margin-bottom: 20px;
   margin-left: 3px;
 }
 .btns-container {
-  border: none; 
+  border: none;
   text-decoration: none;
   border-radius: 8px;
 }
 #addition-btn {
-  display: inline-flex; 
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   border: none;
-  border: 1px solid var(--brand-color); 
-  border-left: none; 
-  opacity: 75%; 
-  border-top-right-radius: 5px; 
+  border: 1px solid var(--brand-color);
+  border-left: none;
+  opacity: 75%;
+  border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: var(--text-input-field);
-  cursor: pointer; 
+  cursor: pointer;
   height: 26px;
   min-width: 26px;
   padding: 0px;
   font-family: inherit;
 }
 #subtraction-btn {
-  display: inline-flex; 
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   border: none;
-  border: 1px solid var(--brand-color); 
+  border: 1px solid var(--brand-color);
   opacity: 75%;
   border-right: none;
-  border-top-left-radius: 5px; 
+  border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   background-color: var(--text-input-field);
-  cursor: pointer; 
+  cursor: pointer;
   height: 26px;
   min-width: 26px;
   padding: 0px;
@@ -443,7 +442,7 @@ nav {
 }
 .shopping-cart {
   display: grid;
-  grid-template-columns:  70px 166px 83px;
+  grid-template-columns: 70px 166px 83px;
   gap: 8px;
   margin-bottom: 24px;
   align-items: center;
@@ -499,19 +498,19 @@ figure {
   position: relative;
 }
 figure img {
-  display: block ; 
+  display: block;
 }
 figure p {
   position: absolute;
-  top: -20px; 
+  top: -20px;
   right: -10px;
   background-color: var(--brand-color);
   width: 20px;
   height: 20px;
   color: var(--white);
-  border-radius: 50%; 
+  border-radius: 50%;
   text-align: center;
-  line-height: 20px;         
+  line-height: 20px;
   font-size: 12px;
 }
 .primary-button {
@@ -571,7 +570,7 @@ figure p {
   width: 35px;
   height: 35px;
   cursor: pointer;
-  display: none;  
+  display: none;
 }
 .product-info div p:nth-child(1) {
   display: inline-block;
@@ -587,16 +586,15 @@ figure p {
   margin-top: 0;
   margin-bottom: 0;
   color: var(--very-light-pink);
-  z-index: 5; 
-
+  z-index: 5;
 }
 /*PRODUCT DETAIL SECONDARY*/
 
 .product-detail-secondary {
   position: relative;
   display: grid;
-  grid-template-columns: 10% 35% 35% 20%; 
-  grid-template-rows: auto; 
+  grid-template-columns: 10% 35% 35% 20%;
+  grid-template-rows: auto;
   background-color: var(--white);
   width: 100%;
   padding-top: 120px;
@@ -618,7 +616,7 @@ figure p {
 }
 .photos-container {
   max-height: 110vh;
-  width: auto; 
+  width: auto;
   object-fit: contain;
 }
 .photos-container img {
@@ -672,34 +670,34 @@ figure p {
 }
 .Sizes {
   display: flex;
-  gap : 1.5rem;
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
   cursor: pointer;
 }
 .product-info-secondary .Sizes p:hover {
   border: 1px solid var(--brand-color);
   color: var(--brand-color);
-} 
+}
 .product-info-secondary .Sizes p.selected {
   border: 1px solid var(--brand-color);
   color: var(--brand-color);
- }
-.product-info-secondary .Sizes p { 
-  background-color: var(--text-input-field); 
-  padding: 8px 12px; 
-  border-radius: 8px; 
+}
+.product-info-secondary .Sizes p {
+  background-color: var(--text-input-field);
+  padding: 8px 12px;
+  border-radius: 8px;
   font-size: var(--md);
   font-weight: 700;
   border: 1px solid transparent;
   color: var(--very-light-pink);
 }
-.description-product-title { 
-  font-weight: bold; 
-  font-size: var(--sm); 
-  margin-top: 24px; 
+.description-product-title {
+  font-weight: bold;
+  font-size: var(--sm);
+  margin-top: 24px;
 }
 .description {
-  font-size: var(--sm); 
+  font-size: var(--sm);
   color: var(--very-light-pink);
   margin-bottom: 1.5rem;
 }
@@ -751,7 +749,7 @@ button img {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .categories:hover .categories-photos {
@@ -760,46 +758,45 @@ button img {
 
 .categories-titles {
   position: absolute;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   justify-content: center;
-  font-size: 30px; 
+  font-size: 30px;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   margin: auto;
   cursor: pointer;
-  font-weight: bold; 
-  color: var(--white); 
-  text-transform: uppercase; 
+  font-weight: bold;
+  color: var(--white);
+  text-transform: uppercase;
   text-align: center;
-  letter-spacing: 2px; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /*ANIMATED LOGO*/
 
 .logo-name-container {
-  background-color: var( --secondary-brand-color);
+  background-color: var(--secondary-brand-color);
   height: 50px;
   overflow: hidden;
   width: 100%;
   display: flex;
   align-items: center;
   position: relative;
-    
 }
 .animated-logo-name {
-  font-family: "Bebas Neue", sans-serif ;
+  font-family: "Bebas Neue", sans-serif;
   color: var(--brand-color);
-  font-stretch: extra-condensed;  
+  font-stretch: extra-condensed;
   font-size: 100px;
   white-space: nowrap;
   letter-spacing: 0.01mm;
   word-spacing: 2cm;
-  height: 70px; 
+  height: 70px;
   position: relative;
-  animation: desplazar 90s steps(95) infinite ;
-  animation-delay: -0.5s; 
+  animation: desplazar 90s steps(95) infinite;
+  animation-delay: -0.5s;
   animation-iteration-count: infinite;
 }
 .logo-name-container2 {
@@ -808,19 +805,19 @@ button img {
   overflow: hidden;
   width: 100%;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 .animated-logo-name2 {
   font-family: "Bebas Neue", sans-serif;
   color: var(--third-brand-color);
-  font-stretch: extra-condensed;  
+  font-stretch: extra-condensed;
   font-size: 100px;
   white-space: nowrap;
   letter-spacing: 0.01mm;
   word-spacing: 2cm;
-  height: 170px; 
+  height: 170px;
   position: relative;
-  animation: desplazar 90s steps(95) infinite ;
+  animation: desplazar 90s steps(95) infinite;
   animation-iteration-count: infinite;
 }
 
@@ -834,7 +831,6 @@ button img {
   padding-bottom: 5%;
   text-align: center;
   justify-items: center;
-
 }
 .newsletter-content {
   grid-column: 2 / 3;
@@ -845,7 +841,7 @@ button img {
   font-family: "Labrada", serif;
   font-optical-sizing: auto;
   font-style: normal;
-  text-align: center;  
+  text-align: center;
   margin-bottom: 0;
 }
 .newsletter-message {
@@ -864,7 +860,8 @@ button img {
   width: 40px;
   line-height: 40px;
 }
-.email-input, .suscribe-button {
+.email-input,
+.suscribe-button {
   border: none;
   outline: none;
 }
@@ -872,7 +869,8 @@ button img {
   width: 0px;
   transition: 0.6s;
 }
-.box-customer-email:hover > .email-input,.email-input:focus {
+.box-customer-email:hover > .email-input,
+.email-input:focus {
   width: 260px;
   padding: 0 10px;
 }
@@ -900,7 +898,7 @@ footer {
 
 .footer-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   max-width: 900px;
@@ -911,8 +909,8 @@ footer {
 
 .footer-links {
   margin: 0 auto;
-  left: 50%; 
-  transform: translateX(-50%); 
+  left: 50%;
+  transform: translateX(-50%);
   cursor: pointer;
 }
 
@@ -973,13 +971,12 @@ footer {
   color: var(--black) !important;
 }
 
-
 @keyframes desplazar {
   from {
     transform: translateX(-25%);
   }
   to {
-    transform: translateX(25%); 
+    transform: translateX(25%);
   }
 }
 
@@ -1050,7 +1047,7 @@ footer {
   .logo-name-container {
     position: relative;
   }
-  }
+}
 
 @media (min-width: 641px) {
   .mobile-menu {

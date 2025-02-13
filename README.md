@@ -2,7 +2,7 @@
 
 ## Sección en Español
 
-# Ecommerce con navegación fluida, intuitiva y muy atractiva 
+# Ecommerce con navegación fluida, intuitiva y muy atractiva
 
 ¡Hola! 👋
 
@@ -12,7 +12,8 @@ Nuestra plataforma permite a los usuarios explorar un catálogo variado, ver inf
 
 ![Imagen del Proyecto](https://github.com/Camiloramos99/CamiloRamosPortfolio/blob/main/assets/images/portfolio-01.png)
 
-## Características 
+## Características
+
 - Navegar por el catálogo de productos
 - Vista del detalle de cada producto
 - Filtrado por categorías
@@ -23,25 +24,30 @@ Nuestra plataforma permite a los usuarios explorar un catálogo variado, ver inf
 - Sección de Branding con Carrusel: Promoción colección de temporada con un carrusel de imágenes y una oferta exclusiva de 2x1 en el producto favorito del cliente.
 
 ## Instalación
+
 1. Clona este repositorio:
    ```bash
    git clone https://github.com/Camiloramos99/AmandivaECommerce
+   ```
 2. Ve al directorio del proyecto:
    cd amandiva
 3. Instala las dependencias:
    npm install
 
 ## Uso
+
 Para iniciar la aplicación en modo desarrollo:
-  npm start
+npm start
 
 ## Licencia
+
 > This project is licensed under the MIT License
 
 ## Autor
+
 Made by [Camilo Ramos](https://www.linkedin.com/in/camilo-ramos-ba40711a2/)
 
---------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # [Amandiva: Online Store](https://amandiva-e-commerce.vercel.app/)
 
@@ -58,6 +64,7 @@ Our platform allows users to explore a varied catalog, view detailed product inf
 ![Project Image](https://github.com/Camiloramos99/CamiloRamosPortfolio/blob/main/assets/images/portfolio-01.png)
 
 ## Features
+
 - Browse the product catalog
 - View detailed product information
 - Filter by categories
@@ -68,20 +75,25 @@ Our platform allows users to explore a varied catalog, view detailed product inf
 - Branding Section with Carousel: Seasonal collection promotion with a carousel of images and an exclusive 2x1 offer on the customer's favorite product.
 
 ## Installation
+
 1. Clone this repository:
    ```bash
    git clone https://github.com/Camiloramos99/AmandivaECommerce
+   ```
 2. Go to the project directory:
    cd amandiva
 3. Install the dependencies:
    npm install
 
 ## Usage
+
 To start the application in development mode:
-  npm start
+npm start
 
 ## License
+
 > This project is licensed under the MIT License
 
 ## Author
+
 Made by [Camilo Ramos](https://www.linkedin.com/in/camilo-ramos-ba40711a2/)
