@@ -178,6 +178,8 @@ function agregarEventoClickACategorias(
 
       if (!isMobileMenuClosed) {
         mobileMenu.classList.add("inactive");
+        mobileMenuIconClose.classList.add("inactive");
+        menuMobileIcon.classList.remove("inactive");
       }
 
       mainContainer.classList.remove("inactive");
@@ -663,7 +665,6 @@ changeToSuscribed();
 
 //PRODUCT DETAIL SECONDARY (MODAL)
 
-const brandNameInDetail = document.querySelector(".brand-name");
 const sizeElements = document.querySelectorAll(
   ".product-info-secondary .Sizes p"
 );
@@ -705,13 +706,6 @@ sizeElements.forEach((size) => {
     this.classList.add("selected");
   });
 });
-
-if (brandNameInDetail) {
-  brandNameInDetail.addEventListener("click", () => {
-    renderProducts(productList);
-    closeProductDetailSecondary();
-  });
-}
 
 const addToCart = document.querySelector(".add-to-cart-button");
 addToCart.addEventListener("click", (e) => {
