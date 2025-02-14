@@ -58,6 +58,8 @@ header {
   font-weight: bold;
   text-align: center;
   letter-spacing: 1px;
+  white-space: nowrap;
+  font-size: clamp(8px, 2vw, 12px);
 }
 nav {
   display: flex;
